@@ -19,6 +19,7 @@
 
 //用于存放全局宏定义 或者 静态字符串
 #import "Constant.h"
+#import "RequestPath.h"
 
 #import "NSObject+MJExtension.h"
 #import "NSObject+AFNetworking.h"

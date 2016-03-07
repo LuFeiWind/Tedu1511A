@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		38236D021C8D18A200BA928D /* TRBaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 38236D011C8D18A200BA928D /* TRBaseViewModel.m */; };
+		38236D051C8D18B100BA928D /* TRBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 38236D041C8D18B100BA928D /* TRBaseModel.m */; };
+		38236D081C8D18EC00BA928D /* TRBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38236D071C8D18EC00BA928D /* TRBaseViewController.m */; };
+		38236D0B1C8D191A00BA928D /* TRLiveNetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 38236D0A1C8D191A00BA928D /* TRLiveNetManager.m */; };
 		382C11831C7E8CDD00F34BB0 /* AppDelegate+System.m in Sources */ = {isa = PBXBuildFile; fileRef = 382C11821C7E8CDD00F34BB0 /* AppDelegate+System.m */; };
 		382C11861C7E930F00F34BB0 /* NSObject+ViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 382C11851C7E930F00F34BB0 /* NSObject+ViewModel.m */; };
 		382C976A1C81D686003D1D51 /* UIView+HUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 382C97691C81D686003D1D51 /* UIView+HUD.m */; };
+		3889D2F81C8D1427005E9698 /* TRRoomListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3889D2F71C8D1427005E9698 /* TRRoomListModel.m */; };
 		3899BC981C7D87620032ADEA /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3899BC971C7D87620032ADEA /* CFNetwork.framework */; };
-		38A0898E1C869C3000CA6019 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A0898D1C869C3000CA6019 /* BaseModel.m */; };
-		38A1A3371C74526C007EEEB7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A1A3351C74526C007EEEB7 /* ViewController.m */; };
 		38A1A33B1C7452CF007EEEB7 /* Factory.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A1A33A1C7452CF007EEEB7 /* Factory.m */; };
 		38A1A3461C745317007EEEB7 /* NSObject+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A1A3411C745317007EEEB7 /* NSObject+AFNetworking.m */; };
 		38A1A3471C745317007EEEB7 /* NSObject+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A1A3431C745317007EEEB7 /* NSObject+MJExtension.m */; };
@@ -30,17 +33,24 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		38236D001C8D18A200BA928D /* TRBaseViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRBaseViewModel.h; sourceTree = "<group>"; };
+		38236D011C8D18A200BA928D /* TRBaseViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRBaseViewModel.m; sourceTree = "<group>"; };
+		38236D031C8D18B100BA928D /* TRBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRBaseModel.h; sourceTree = "<group>"; };
+		38236D041C8D18B100BA928D /* TRBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRBaseModel.m; sourceTree = "<group>"; };
+		38236D061C8D18EC00BA928D /* TRBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRBaseViewController.h; sourceTree = "<group>"; };
+		38236D071C8D18EC00BA928D /* TRBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRBaseViewController.m; sourceTree = "<group>"; };
+		38236D091C8D191A00BA928D /* TRLiveNetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRLiveNetManager.h; sourceTree = "<group>"; };
+		38236D0A1C8D191A00BA928D /* TRLiveNetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRLiveNetManager.m; sourceTree = "<group>"; };
+		38236D0C1C8D194200BA928D /* RequestPath.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RequestPath.h; sourceTree = "<group>"; };
 		382C11811C7E8CDD00F34BB0 /* AppDelegate+System.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+System.h"; sourceTree = "<group>"; };
 		382C11821C7E8CDD00F34BB0 /* AppDelegate+System.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+System.m"; sourceTree = "<group>"; };
 		382C11841C7E930F00F34BB0 /* NSObject+ViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ViewModel.h"; sourceTree = "<group>"; };
 		382C11851C7E930F00F34BB0 /* NSObject+ViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ViewModel.m"; sourceTree = "<group>"; };
 		382C97681C81D686003D1D51 /* UIView+HUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HUD.h"; sourceTree = "<group>"; };
 		382C97691C81D686003D1D51 /* UIView+HUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HUD.m"; sourceTree = "<group>"; };
+		3889D2F61C8D1427005E9698 /* TRRoomListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRRoomListModel.h; sourceTree = "<group>"; };
+		3889D2F71C8D1427005E9698 /* TRRoomListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRRoomListModel.m; sourceTree = "<group>"; };
 		3899BC971C7D87620032ADEA /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
-		38A0898C1C869C3000CA6019 /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
-		38A0898D1C869C3000CA6019 /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
-		38A1A3341C74526C007EEEB7 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		38A1A3351C74526C007EEEB7 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		38A1A3381C74527F007EEEB7 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		38A1A3391C7452CF007EEEB7 /* Factory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Factory.h; sourceTree = "<group>"; };
 		38A1A33A1C7452CF007EEEB7 /* Factory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Factory.m; sourceTree = "<group>"; };
@@ -107,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				38A1A33F1C7452F2007EEEB7 /* Constant.h */,
+				38236D0C1C8D194200BA928D /* RequestPath.h */,
 			);
 			path = Define;
 			sourceTree = "<group>";
@@ -114,8 +125,10 @@
 		38A1A32D1C74526C007EEEB7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				38A0898C1C869C3000CA6019 /* BaseModel.h */,
-				38A0898D1C869C3000CA6019 /* BaseModel.m */,
+				3889D2F61C8D1427005E9698 /* TRRoomListModel.h */,
+				3889D2F71C8D1427005E9698 /* TRRoomListModel.m */,
+				38236D031C8D18B100BA928D /* TRBaseModel.h */,
+				38236D041C8D18B100BA928D /* TRBaseModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -123,6 +136,8 @@
 		38A1A32E1C74526C007EEEB7 /* NetManager */ = {
 			isa = PBXGroup;
 			children = (
+				38236D091C8D191A00BA928D /* TRLiveNetManager.h */,
+				38236D0A1C8D191A00BA928D /* TRLiveNetManager.m */,
 			);
 			path = NetManager;
 			sourceTree = "<group>";
@@ -165,8 +180,8 @@
 		38A1A3331C74526C007EEEB7 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				38A1A3341C74526C007EEEB7 /* ViewController.h */,
-				38A1A3351C74526C007EEEB7 /* ViewController.m */,
+				38236D061C8D18EC00BA928D /* TRBaseViewController.h */,
+				38236D071C8D18EC00BA928D /* TRBaseViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -174,6 +189,8 @@
 		38A1A3361C74526C007EEEB7 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				38236D001C8D18A200BA928D /* TRBaseViewModel.h */,
+				38236D011C8D18A200BA928D /* TRBaseViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -293,6 +310,7 @@
 		38ADA3AB1C626AAF0093502F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = TR;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = Tarena;
 				TargetAttributes = {
@@ -373,15 +391,18 @@
 			files = (
 				38A1A3471C745317007EEEB7 /* NSObject+MJExtension.m in Sources */,
 				38A1A3551C745698007EEEB7 /* iCarousel.m in Sources */,
+				3889D2F81C8D1427005E9698 /* TRRoomListModel.m in Sources */,
 				382C976A1C81D686003D1D51 /* UIView+HUD.m in Sources */,
+				38236D051C8D18B100BA928D /* TRBaseModel.m in Sources */,
 				38A1A3511C74560D007EEEB7 /* PSCollectionViewCell.m in Sources */,
 				38A1A33B1C7452CF007EEEB7 /* Factory.m in Sources */,
 				38A1A3461C745317007EEEB7 /* NSObject+AFNetworking.m in Sources */,
 				38ADA3BB1C626AAF0093502F /* AppDelegate.m in Sources */,
 				382C11861C7E930F00F34BB0 /* NSObject+ViewModel.m in Sources */,
-				38A1A3371C74526C007EEEB7 /* ViewController.m in Sources */,
+				38236D021C8D18A200BA928D /* TRBaseViewModel.m in Sources */,
+				38236D0B1C8D191A00BA928D /* TRLiveNetManager.m in Sources */,
 				38A1A3481C745317007EEEB7 /* UIScrollView+Refresh.m in Sources */,
-				38A0898E1C869C3000CA6019 /* BaseModel.m in Sources */,
+				38236D081C8D18EC00BA928D /* TRBaseViewController.m in Sources */,
 				382C11831C7E8CDD00F34BB0 /* AppDelegate+System.m in Sources */,
 				38ADA3B81C626AAF0093502F /* main.m in Sources */,
 				38A1A3501C74560D007EEEB7 /* PSCollectionView.m in Sources */,
@@ -478,9 +499,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PREFIX_HEADER = $PRODUCT_NAME/PrefixHeader.pch;
 				INFOPLIST_FILE = TRProject/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tarena.TRProject;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tedu.GameLive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -492,9 +513,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PREFIX_HEADER = $PRODUCT_NAME/PrefixHeader.pch;
 				INFOPLIST_FILE = TRProject/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tarena.TRProject;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tedu.GameLive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
