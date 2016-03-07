@@ -12,6 +12,7 @@
 #import "TRCategoriesModel.h"
 #import "TRCategoryModel.h"
 #import "TRSearchModel.h"
+#import "TRADListModel.h"
 
 @interface TRLiveNetManager : NSObject
 
@@ -38,6 +39,9 @@
 
 /** 搜索 */
 + (id)search:(NSString *)words page:(NSInteger)page completionHandler:kCompetionHandlerBlock
+
+/** 获取广告列表 */
++ (id)getADListCompletionHandler:kCompetionHandlerBlock
 @end
 
 

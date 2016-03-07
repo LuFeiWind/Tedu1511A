@@ -51,6 +51,12 @@
     }];
 }
 
++ (id)getADListCompletionHandler:(void (^)(id, NSError *))completionHandler{
+    return [self GET:kADPath parameters:nil progress:nil completionHandler:^(id responseObj, NSError *error) {
+        completionHandler([TRADListModel parse:responseObj], error);
+    }];
+}
+
 @end
 
 

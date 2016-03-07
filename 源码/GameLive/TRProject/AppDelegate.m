@@ -19,6 +19,8 @@
     //全局默认配置
     [self setupGlobalConfig];
     
+    
+    
     //    [TRLiveNetManager search:@"小智" page:0 completionHandler:^(id model, NSError *error) {
     //        
     //    }];
