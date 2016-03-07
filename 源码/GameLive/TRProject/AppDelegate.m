@@ -19,9 +19,13 @@
     //全局默认配置
     [self setupGlobalConfig];
     
-    [TRLiveNetManager getCategoryWithSlug:@"lol" completionHandler:^(id model, NSError *error) {
-        
-    }];
+    //    [TRLiveNetManager search:@"小智" page:0 completionHandler:^(id model, NSError *error) {
+    //        
+    //    }];
+    
+    //    [TRLiveNetManager getCategoryWithSlug:@"lol" completionHandler:^(id model, NSError *error) {
+    //        
+    //    }];
     
     //    [TRLiveNetManager getCategoriesCompletionHandler:^(id model, NSError *error) {
     //        

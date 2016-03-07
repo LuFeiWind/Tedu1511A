@@ -14,6 +14,7 @@
 		38236D0F1C8D287A00BA928D /* TRRoomModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 38236D0E1C8D287A00BA928D /* TRRoomModel.m */; };
 		38236D121C8D431700BA928D /* TRCategoriesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 38236D111C8D431700BA928D /* TRCategoriesModel.m */; };
 		38236D151C8D444400BA928D /* TRCategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 38236D141C8D444400BA928D /* TRCategoryModel.m */; };
+		38236D181C8D486800BA928D /* TRSearchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 38236D171C8D486800BA928D /* TRSearchModel.m */; };
 		382C11831C7E8CDD00F34BB0 /* AppDelegate+System.m in Sources */ = {isa = PBXBuildFile; fileRef = 382C11821C7E8CDD00F34BB0 /* AppDelegate+System.m */; };
 		382C11861C7E930F00F34BB0 /* NSObject+ViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 382C11851C7E930F00F34BB0 /* NSObject+ViewModel.m */; };
 		382C976A1C81D686003D1D51 /* UIView+HUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 382C97691C81D686003D1D51 /* UIView+HUD.m */; };
@@ -51,6 +52,8 @@
 		38236D111C8D431700BA928D /* TRCategoriesModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRCategoriesModel.m; sourceTree = "<group>"; };
 		38236D131C8D444400BA928D /* TRCategoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRCategoryModel.h; sourceTree = "<group>"; };
 		38236D141C8D444400BA928D /* TRCategoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRCategoryModel.m; sourceTree = "<group>"; };
+		38236D161C8D486800BA928D /* TRSearchModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRSearchModel.h; sourceTree = "<group>"; };
+		38236D171C8D486800BA928D /* TRSearchModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRSearchModel.m; sourceTree = "<group>"; };
 		382C11811C7E8CDD00F34BB0 /* AppDelegate+System.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+System.h"; sourceTree = "<group>"; };
 		382C11821C7E8CDD00F34BB0 /* AppDelegate+System.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+System.m"; sourceTree = "<group>"; };
 		382C11841C7E930F00F34BB0 /* NSObject+ViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ViewModel.h"; sourceTree = "<group>"; };
@@ -144,6 +147,8 @@
 				38236D111C8D431700BA928D /* TRCategoriesModel.m */,
 				38236D131C8D444400BA928D /* TRCategoryModel.h */,
 				38236D141C8D444400BA928D /* TRCategoryModel.m */,
+				38236D161C8D486800BA928D /* TRSearchModel.h */,
+				38236D171C8D486800BA928D /* TRSearchModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -420,6 +425,7 @@
 				38236D021C8D18A200BA928D /* TRBaseViewModel.m in Sources */,
 				38236D0B1C8D191A00BA928D /* TRLiveNetManager.m in Sources */,
 				38A1A3481C745317007EEEB7 /* UIScrollView+Refresh.m in Sources */,
+				38236D181C8D486800BA928D /* TRSearchModel.m in Sources */,
 				38236D081C8D18EC00BA928D /* TRBaseViewController.m in Sources */,
 				382C11831C7E8CDD00F34BB0 /* AppDelegate+System.m in Sources */,
 				38ADA3B81C626AAF0093502F /* main.m in Sources */,

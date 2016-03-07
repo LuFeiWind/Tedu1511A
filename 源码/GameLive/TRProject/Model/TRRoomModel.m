@@ -11,7 +11,7 @@
 @implementation TRRoomModel
 
 + (NSDictionary *)objClassInArray{
-    return @{@"rankTotal" : [TRRoomRankTotalModel class], @"cross" : [TRRoomCrossModel class], @"admins" : [TRRoomAdminsModel class], @"rankWeek" : [TRRoomRankTotalModel class]};
+    return @{@"rankTotal" : [TRRoomRankTotalModel class], @"cross" : [TRCategoryDataModel class], @"admins" : [TRRoomAdminsModel class], @"rankWeek" : [TRRoomRankTotalModel class]};
 }
 
 + (NSString *)replacedKeyFromPropertyName:(NSString *)propertyName{
@@ -40,9 +40,6 @@
 @end
 
 @implementation TRRoomRankTotalModel
-@end
-
-@implementation TRRoomCrossModel
 @end
 
 @implementation TRRoomAdminsModel

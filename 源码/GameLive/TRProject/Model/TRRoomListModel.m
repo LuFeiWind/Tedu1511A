@@ -10,11 +10,12 @@
 
 @implementation TRRoomListModel
 
-
 + (NSDictionary *)objClassInArray{
-    return @{@"data" : [TRRoomListDataModel class]};
+    return @{@"data" : [TRCategoryDataModel class]};
 }
+
 @end
+
 @implementation TRRoomListRecommendModel
 
 + (NSDictionary *)objClassInArray{
@@ -22,17 +23,6 @@
 }
 
 @end
-
-
-@implementation TRRoomListDataModel
-
-@end
-
-
-@implementation TRRoomListRecommendDataLinkObjectModel
-
-@end
-
 
 @implementation TRRoomListRecommendDataModel
 

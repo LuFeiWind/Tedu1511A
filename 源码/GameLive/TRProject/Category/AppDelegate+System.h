@@ -14,6 +14,7 @@
 
 - (void)setupGlobalConfig;
 
-
+@property (nonatomic, readonly) AFNetworkReachabilityStatus netReachStatus;
+@property (nonatomic, getter=isOnLine, readonly) BOOL onLine;
 
 @end

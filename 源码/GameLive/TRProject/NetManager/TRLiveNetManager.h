@@ -11,6 +11,7 @@
 #import "TRRoomModel.h"
 #import "TRCategoriesModel.h"
 #import "TRCategoryModel.h"
+#import "TRSearchModel.h"
 
 @interface TRLiveNetManager : NSObject
 
@@ -35,5 +36,22 @@
 + (id)getCategoryWithSlug:(NSString *)slug completionHandler:kCompetionHandlerBlock
 
 
-
+/** 搜索 */
++ (id)search:(NSString *)words page:(NSInteger)page completionHandler:kCompetionHandlerBlock
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
