@@ -9,6 +9,7 @@
 #import "AppDelegate+System.h"
 #import <MLTransition.h>
 
+const void *netStatusKey = &netStatusKey;
 @implementation AppDelegate (System)
 
 - (void)setupGlobalConfig{
@@ -17,18 +18,6 @@
     //网络状态监测
     [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
         NSLog(@"Reachability: %@", AFStringFromNetworkReachabilityStatus(status));
-        switch (status) {
-            case AFNetworkReachabilityStatusUnknown:
-            case AFNetworkReachabilityStatusNotReachable: {
-                self.onLine = NO;
-                break;
-            }
-            case AFNetworkReachabilityStatusReachableViaWWAN:
-            case AFNetworkReachabilityStatusReachableViaWiFi: {
-                self.onLine = YES;
-                break;
-            }
-        }
     }];
     [[AFNetworkReachabilityManager sharedManager] startMonitoring];
     //自定义左上角返回按钮, 导致右划返回失效
@@ -37,6 +26,21 @@
     [DDLog addLogger:[DDASLLogger sharedInstance]];
     [DDLog addLogger:[DDTTYLogger sharedInstance]];
     [[DDTTYLogger sharedInstance] setColorsEnabled:YES];
+}
+
+- (BOOL)isOnLine{
+    switch (self.netReachStatus) {
+        case AFNetworkReachabilityStatusUnknown:
+        case AFNetworkReachabilityStatusNotReachable: {
+            return NO;
+            break;
+        }
+        case AFNetworkReachabilityStatusReachableViaWWAN:
+        case AFNetworkReachabilityStatusReachableViaWiFi: {
+            return YES;
+            break;
+        }
+    }
 }
 
 - (AFNetworkReachabilityStatus)netReachStatus{
