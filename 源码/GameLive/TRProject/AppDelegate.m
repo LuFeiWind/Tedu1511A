@@ -19,13 +19,21 @@
     //全局默认配置
     [self setupGlobalConfig];
     
-    [TRLiveNetManager getRoomWithUID:@"24076" completionHandler:^(id model, NSError *error) {
+    [TRLiveNetManager getCategoryWithSlug:@"lol" completionHandler:^(id model, NSError *error) {
         
     }];
     
-//    [TRLiveNetManager getRoomListCompletionHandler:^(id model, NSError *error) {
-//        NSLog(@"房间列表测试通过");
-//    }];
+    //    [TRLiveNetManager getCategoriesCompletionHandler:^(id model, NSError *error) {
+    //        
+    //    }];
+    
+    //    [TRLiveNetManager getRoomWithUID:@"24076" completionHandler:^(id model, NSError *error) {
+    //        
+    //    }];
+    
+    //    [TRLiveNetManager getRoomListCompletionHandler:^(id model, NSError *error) {
+    //        NSLog(@"房间列表测试通过");
+    //    }];
     return YES;
 }
 

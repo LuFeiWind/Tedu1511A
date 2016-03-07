@@ -21,7 +21,7 @@
 #define kCategoriesPath @"json/categories/list.json"
 
 /** 某栏目房间列表 */
-#define kCategoryRoomsPath @"json/categories/lol/list.json"
+#define kCategoryRoomsPath @"json/categories/%@/list.json"
 
 /** 搜索功能 */
 #define kSearchPath @"api/v1"

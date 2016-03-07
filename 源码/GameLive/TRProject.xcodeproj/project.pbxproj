@@ -12,6 +12,8 @@
 		38236D081C8D18EC00BA928D /* TRBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38236D071C8D18EC00BA928D /* TRBaseViewController.m */; };
 		38236D0B1C8D191A00BA928D /* TRLiveNetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 38236D0A1C8D191A00BA928D /* TRLiveNetManager.m */; };
 		38236D0F1C8D287A00BA928D /* TRRoomModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 38236D0E1C8D287A00BA928D /* TRRoomModel.m */; };
+		38236D121C8D431700BA928D /* TRCategoriesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 38236D111C8D431700BA928D /* TRCategoriesModel.m */; };
+		38236D151C8D444400BA928D /* TRCategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 38236D141C8D444400BA928D /* TRCategoryModel.m */; };
 		382C11831C7E8CDD00F34BB0 /* AppDelegate+System.m in Sources */ = {isa = PBXBuildFile; fileRef = 382C11821C7E8CDD00F34BB0 /* AppDelegate+System.m */; };
 		382C11861C7E930F00F34BB0 /* NSObject+ViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 382C11851C7E930F00F34BB0 /* NSObject+ViewModel.m */; };
 		382C976A1C81D686003D1D51 /* UIView+HUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 382C97691C81D686003D1D51 /* UIView+HUD.m */; };
@@ -45,6 +47,10 @@
 		38236D0C1C8D194200BA928D /* RequestPath.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RequestPath.h; sourceTree = "<group>"; };
 		38236D0D1C8D287A00BA928D /* TRRoomModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRRoomModel.h; sourceTree = "<group>"; };
 		38236D0E1C8D287A00BA928D /* TRRoomModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRRoomModel.m; sourceTree = "<group>"; };
+		38236D101C8D431700BA928D /* TRCategoriesModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRCategoriesModel.h; sourceTree = "<group>"; };
+		38236D111C8D431700BA928D /* TRCategoriesModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRCategoriesModel.m; sourceTree = "<group>"; };
+		38236D131C8D444400BA928D /* TRCategoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRCategoryModel.h; sourceTree = "<group>"; };
+		38236D141C8D444400BA928D /* TRCategoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRCategoryModel.m; sourceTree = "<group>"; };
 		382C11811C7E8CDD00F34BB0 /* AppDelegate+System.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+System.h"; sourceTree = "<group>"; };
 		382C11821C7E8CDD00F34BB0 /* AppDelegate+System.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+System.m"; sourceTree = "<group>"; };
 		382C11841C7E930F00F34BB0 /* NSObject+ViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ViewModel.h"; sourceTree = "<group>"; };
@@ -134,6 +140,10 @@
 				38236D041C8D18B100BA928D /* TRBaseModel.m */,
 				38236D0D1C8D287A00BA928D /* TRRoomModel.h */,
 				38236D0E1C8D287A00BA928D /* TRRoomModel.m */,
+				38236D101C8D431700BA928D /* TRCategoriesModel.h */,
+				38236D111C8D431700BA928D /* TRCategoriesModel.m */,
+				38236D131C8D444400BA928D /* TRCategoryModel.h */,
+				38236D141C8D444400BA928D /* TRCategoryModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -395,6 +405,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				38A1A3471C745317007EEEB7 /* NSObject+MJExtension.m in Sources */,
+				38236D151C8D444400BA928D /* TRCategoryModel.m in Sources */,
 				38A1A3551C745698007EEEB7 /* iCarousel.m in Sources */,
 				3889D2F81C8D1427005E9698 /* TRRoomListModel.m in Sources */,
 				382C976A1C81D686003D1D51 /* UIView+HUD.m in Sources */,
@@ -402,6 +413,7 @@
 				38A1A3511C74560D007EEEB7 /* PSCollectionViewCell.m in Sources */,
 				38A1A33B1C7452CF007EEEB7 /* Factory.m in Sources */,
 				38A1A3461C745317007EEEB7 /* NSObject+AFNetworking.m in Sources */,
+				38236D121C8D431700BA928D /* TRCategoriesModel.m in Sources */,
 				38236D0F1C8D287A00BA928D /* TRRoomModel.m in Sources */,
 				38ADA3BB1C626AAF0093502F /* AppDelegate.m in Sources */,
 				382C11861C7E930F00F34BB0 /* NSObject+ViewModel.m in Sources */,

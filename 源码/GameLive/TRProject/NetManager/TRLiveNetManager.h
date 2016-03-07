@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "TRRoomListModel.h"
 #import "TRRoomModel.h"
+#import "TRCategoriesModel.h"
+#import "TRCategoryModel.h"
+
 @interface TRLiveNetManager : NSObject
 
 
@@ -23,4 +26,14 @@
  *  @return 网络请求任务
  */
 + (id)getRoomWithUID:(NSString *)uid completionHandler:kCompetionHandlerBlock
+
+
+/** 获取类型列表 */
++ (id)getCategoriesCompletionHandler:kCompetionHandlerBlock
+
+/** 获得某种类型的房间列表 */
++ (id)getCategoryWithSlug:(NSString *)slug completionHandler:kCompetionHandlerBlock
+
+
+
 @end

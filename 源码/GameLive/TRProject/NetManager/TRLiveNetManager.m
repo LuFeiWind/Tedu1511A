@@ -23,4 +23,17 @@
     }];
 }
 
++(id)getCategoriesCompletionHandler:(void (^)(id, NSError *))completionHandler{
+    return [self GET:kCategoriesPath parameters:nil progress:nil completionHandler:^(id responseObj, NSError *error) {
+        completionHandler([TRCategoriesModel parse:responseObj], error);
+    }];
+}
+
++ (id)getCategoryWithSlug:(NSString *)slug completionHandler:(void (^)(id, NSError *))completionHandler{
+    NSString *path = [NSString stringWithFormat:kCategoryRoomsPath, slug];
+    return [self GET:path parameters:nil progress:nil completionHandler:^(id responseObj, NSError *error) {
+        completionHandler([TRCategoryModel parse:responseObj], error);
+    }];
+}
+
 @end
