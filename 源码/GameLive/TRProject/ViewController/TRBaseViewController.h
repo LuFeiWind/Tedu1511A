@@ -6,8 +6,6 @@
 //  Copyright © 2016年 Tarena. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
-@interface TRBaseViewController : NSObject
+@interface TRBaseViewController : UIViewController
 
 @end

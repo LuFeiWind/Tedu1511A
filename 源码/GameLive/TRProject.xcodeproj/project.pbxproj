@@ -34,6 +34,7 @@
 		38A641FA1C8C225D00FCBF96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38A641F71C8C225D00FCBF96 /* Main.storyboard */; };
 		38ADA3B81C626AAF0093502F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 38ADA3B71C626AAF0093502F /* main.m */; };
 		38ADA3BB1C626AAF0093502F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 38ADA3BA1C626AAF0093502F /* AppDelegate.m */; };
+		38C8091A1C8D60EE000036CB /* TRIntroModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C809191C8D60EE000036CB /* TRIntroModel.m */; };
 		7BADFFA4FF0A3162B67E0831 /* libPods-TRProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8759E2D9A62BE10618FCC99C /* libPods-TRProject.a */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +92,8 @@
 		38ADA3B91C626AAF0093502F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		38ADA3BA1C626AAF0093502F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		38ADA3C71C626AAF0093502F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		38C809181C8D60EE000036CB /* TRIntroModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRIntroModel.h; sourceTree = "<group>"; };
+		38C809191C8D60EE000036CB /* TRIntroModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRIntroModel.m; sourceTree = "<group>"; };
 		70276005029EE88E7F2474B9 /* Pods-TRProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TRProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-TRProject/Pods-TRProject.release.xcconfig"; sourceTree = "<group>"; };
 		7BA1DBF911CCDD099DBC3032 /* Pods-TRProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TRProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TRProject/Pods-TRProject.debug.xcconfig"; sourceTree = "<group>"; };
 		8759E2D9A62BE10618FCC99C /* libPods-TRProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TRProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -154,6 +157,8 @@
 				38236D171C8D486800BA928D /* TRSearchModel.m */,
 				38236D191C8D56FD00BA928D /* TRADListModel.h */,
 				38236D1A1C8D56FD00BA928D /* TRADListModel.m */,
+				38C809181C8D60EE000036CB /* TRIntroModel.h */,
+				38C809191C8D60EE000036CB /* TRIntroModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -422,6 +427,7 @@
 				38236D051C8D18B100BA928D /* TRBaseModel.m in Sources */,
 				38236D1B1C8D56FD00BA928D /* TRADListModel.m in Sources */,
 				38A1A3511C74560D007EEEB7 /* PSCollectionViewCell.m in Sources */,
+				38C8091A1C8D60EE000036CB /* TRIntroModel.m in Sources */,
 				38A1A33B1C7452CF007EEEB7 /* Factory.m in Sources */,
 				38A1A3461C745317007EEEB7 /* NSObject+AFNetworking.m in Sources */,
 				38236D121C8D431700BA928D /* TRCategoriesModel.m in Sources */,

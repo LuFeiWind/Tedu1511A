@@ -22,7 +22,7 @@
 @property (nonatomic, strong) NSArray<TRADListPcBannerModel *> *pcBanner2;
 
 @end
-@interface TRADListPlayerGuanggaoModel : NSObject
+@interface TRADListPlayerGuanggaoModel : TRBaseModel
 
 @property (nonatomic, assign) NSInteger status;
 
@@ -48,7 +48,7 @@
 
 @end
 
-@interface TRADListPcBannerModel : NSObject
+@interface TRADListPcBannerModel : TRBaseModel
 
 @property (nonatomic, assign) NSInteger status;
 @property (nonatomic, copy) NSString *subtitle;
@@ -64,7 +64,7 @@
 
 @end
 
-@interface TRADListListModel : NSObject
+@interface TRADListListModel : TRBaseModel
 
 @property (nonatomic, copy) NSString *slug;
 @property (nonatomic, copy) NSString *name;

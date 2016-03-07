@@ -13,6 +13,7 @@
 #import "TRCategoryModel.h"
 #import "TRSearchModel.h"
 #import "TRADListModel.h"
+#import "TRIntroModel.h"
 
 @interface TRLiveNetManager : NSObject
 
@@ -42,6 +43,9 @@
 
 /** 获取广告列表 */
 + (id)getADListCompletionHandler:kCompetionHandlerBlock
+
+/** 获取推荐页面信息列表 */
++ (id)getIntroCompletionHandler:kCompetionHandlerBlock
 @end
 
 

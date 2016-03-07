@@ -57,6 +57,12 @@
     }];
 }
 
++ (id)getIntroCompletionHandler:(void (^)(id, NSError *))completionHandler{
+    return [self GET:kIntroPath parameters:nil progress:nil completionHandler:^(id responseObj, NSError *error) {
+        completionHandler([TRIntroModel parse:responseObj], error);
+    }];
+}
+
 @end
 
 

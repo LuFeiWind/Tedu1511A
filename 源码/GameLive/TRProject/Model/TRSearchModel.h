@@ -15,7 +15,7 @@
 @property (nonatomic, assign) NSInteger code;
 
 @end
-@interface TRSearchDataModel : NSObject
+@interface TRSearchDataModel : TRBaseModel
 
 @property (nonatomic, assign) NSInteger play_status;
 
@@ -27,7 +27,7 @@
 
 @end
 
-@interface TRSearchDataItemsModel : NSObject
+@interface TRSearchDataItemsModel : TRBaseModel
 
 @property (nonatomic, copy) NSString *category_slug;
 
