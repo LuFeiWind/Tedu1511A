@@ -16,4 +16,11 @@
     }];
 }
 
++ (id)getRoomWithUID:(NSString *)uid completionHandler:(void (^)(id, NSError *))completionHandler{
+    NSString *path = [NSString stringWithFormat:kRoomDetailPath, uid];
+    return [self GET:path parameters:nil progress:nil completionHandler:^(id responseObj, NSError *error) {
+        completionHandler([TRRoomModel parse:responseObj], error);
+    }];
+}
+
 @end

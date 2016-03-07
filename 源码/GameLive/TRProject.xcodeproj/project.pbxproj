@@ -11,6 +11,7 @@
 		38236D051C8D18B100BA928D /* TRBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 38236D041C8D18B100BA928D /* TRBaseModel.m */; };
 		38236D081C8D18EC00BA928D /* TRBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38236D071C8D18EC00BA928D /* TRBaseViewController.m */; };
 		38236D0B1C8D191A00BA928D /* TRLiveNetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 38236D0A1C8D191A00BA928D /* TRLiveNetManager.m */; };
+		38236D0F1C8D287A00BA928D /* TRRoomModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 38236D0E1C8D287A00BA928D /* TRRoomModel.m */; };
 		382C11831C7E8CDD00F34BB0 /* AppDelegate+System.m in Sources */ = {isa = PBXBuildFile; fileRef = 382C11821C7E8CDD00F34BB0 /* AppDelegate+System.m */; };
 		382C11861C7E930F00F34BB0 /* NSObject+ViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 382C11851C7E930F00F34BB0 /* NSObject+ViewModel.m */; };
 		382C976A1C81D686003D1D51 /* UIView+HUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 382C97691C81D686003D1D51 /* UIView+HUD.m */; };
@@ -42,6 +43,8 @@
 		38236D091C8D191A00BA928D /* TRLiveNetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRLiveNetManager.h; sourceTree = "<group>"; };
 		38236D0A1C8D191A00BA928D /* TRLiveNetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRLiveNetManager.m; sourceTree = "<group>"; };
 		38236D0C1C8D194200BA928D /* RequestPath.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RequestPath.h; sourceTree = "<group>"; };
+		38236D0D1C8D287A00BA928D /* TRRoomModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRRoomModel.h; sourceTree = "<group>"; };
+		38236D0E1C8D287A00BA928D /* TRRoomModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRRoomModel.m; sourceTree = "<group>"; };
 		382C11811C7E8CDD00F34BB0 /* AppDelegate+System.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+System.h"; sourceTree = "<group>"; };
 		382C11821C7E8CDD00F34BB0 /* AppDelegate+System.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+System.m"; sourceTree = "<group>"; };
 		382C11841C7E930F00F34BB0 /* NSObject+ViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ViewModel.h"; sourceTree = "<group>"; };
@@ -129,6 +132,8 @@
 				3889D2F71C8D1427005E9698 /* TRRoomListModel.m */,
 				38236D031C8D18B100BA928D /* TRBaseModel.h */,
 				38236D041C8D18B100BA928D /* TRBaseModel.m */,
+				38236D0D1C8D287A00BA928D /* TRRoomModel.h */,
+				38236D0E1C8D287A00BA928D /* TRRoomModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -397,6 +402,7 @@
 				38A1A3511C74560D007EEEB7 /* PSCollectionViewCell.m in Sources */,
 				38A1A33B1C7452CF007EEEB7 /* Factory.m in Sources */,
 				38A1A3461C745317007EEEB7 /* NSObject+AFNetworking.m in Sources */,
+				38236D0F1C8D287A00BA928D /* TRRoomModel.m in Sources */,
 				38ADA3BB1C626AAF0093502F /* AppDelegate.m in Sources */,
 				382C11861C7E930F00F34BB0 /* NSObject+ViewModel.m in Sources */,
 				38236D021C8D18A200BA928D /* TRBaseViewModel.m in Sources */,
