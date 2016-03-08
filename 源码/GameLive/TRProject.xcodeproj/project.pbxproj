@@ -519,7 +519,7 @@
 				TargetAttributes = {
 					38ADA3B21C626AAF0093502F = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = KS8BTZW5V4;
+						DevelopmentTeam = Q4A4E5KTY4;
 					};
 				};
 			};
@@ -721,7 +721,7 @@
 				INFOPLIST_FILE = TRProject/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tedu.GameLive;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tedu.GameLive2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -736,7 +736,7 @@
 				INFOPLIST_FILE = TRProject/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tedu.GameLive;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tedu.GameLive2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

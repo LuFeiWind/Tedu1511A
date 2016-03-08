@@ -23,6 +23,10 @@
 @end
 
 @implementation TRLiveListViewController
+{
+    AVPlayer *_player;
+    AVPlayerItem *_playerItem;
+}
 #pragma mark - UICollectionView delegate
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     return self.liveListVM.rowNumber;
@@ -38,11 +42,40 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     AVPlayerViewController *vc = [AVPlayerViewController new];
-    AVPlayer *player = [AVPlayer playerWithURL:[self.liveListVM videoURLForRow:indexPath.row]];
-    vc.player = player;
+    _playerItem = [AVPlayerItem playerItemWithURL:[self.liveListVM videoURLForRow:indexPath.row]];
+    _player = [AVPlayer playerWithPlayerItem:_playerItem];
+    [_playerItem addObserver:self forKeyPath:@"playbackBufferEmpty" options:NSKeyValueObservingOptionNew context:nil];
+    [_playerItem addObserver:self forKeyPath:@"playbackLikelyToKeepUp" options:NSKeyValueObservingOptionNew context:nil];
+    vc.player = _player;
     [vc.player play];
     [self presentViewController:vc animated:YES completion:nil];
 }
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object
+                        change:(NSDictionary *)change context:(void *)context {
+    if (!_player)
+    {
+        return;
+    }
+    
+    else if (object == _playerItem && [keyPath isEqualToString:@"playbackBufferEmpty"])
+    {
+        if (_playerItem.playbackBufferEmpty) {
+            //Your code here
+            [_player play];
+        }
+    }
+    
+    else if (object == _playerItem && [keyPath isEqualToString:@"playbackLikelyToKeepUp"])
+    {
+        if (_playerItem.playbackLikelyToKeepUp)
+        {
+            //Your code here
+            [_player play];
+        }
+    }
+}
+
 #pragma mark - Life Circle
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
