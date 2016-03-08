@@ -35,8 +35,9 @@
 		38C11E611C8D7A7600FA0235 /* TRIntroModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C11E571C8D7A7600FA0235 /* TRIntroModel.m */; };
 		38C11E621C8D7A7600FA0235 /* TRRoomListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C11E5A1C8D7A7600FA0235 /* TRRoomListModel.m */; };
 		38C11E631C8D7A7600FA0235 /* TRRoomModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C11E5C1C8D7A7600FA0235 /* TRRoomModel.m */; };
-		38C11E6E1C8D7ACD00FA0235 /* TRCategoriesViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C11E6D1C8D7ACD00FA0235 /* TRCategoriesViewModel.m */; };
-		38C11E711C8D7AE500FA0235 /* TRCategoryViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C11E701C8D7AE500FA0235 /* TRCategoryViewModel.m */; };
+		38C11E7A1C8E662500FA0235 /* TRCategoriesViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C11E771C8E662500FA0235 /* TRCategoriesViewModel.m */; };
+		38C11E7B1C8E662500FA0235 /* TRCategoryViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C11E791C8E662500FA0235 /* TRCategoryViewModel.m */; };
+		38C11E7E1C8E665B00FA0235 /* TRCategoriesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C11E7D1C8E665B00FA0235 /* TRCategoriesCell.m */; };
 		7BADFFA4FF0A3162B67E0831 /* libPods-TRProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8759E2D9A62BE10618FCC99C /* libPods-TRProject.a */; };
 /* End PBXBuildFile section */
 
@@ -96,10 +97,12 @@
 		38C11E5A1C8D7A7600FA0235 /* TRRoomListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRRoomListModel.m; sourceTree = "<group>"; };
 		38C11E5B1C8D7A7600FA0235 /* TRRoomModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRRoomModel.h; sourceTree = "<group>"; };
 		38C11E5C1C8D7A7600FA0235 /* TRRoomModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRRoomModel.m; sourceTree = "<group>"; };
-		38C11E6C1C8D7ACD00FA0235 /* TRCategoriesViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRCategoriesViewModel.h; sourceTree = "<group>"; };
-		38C11E6D1C8D7ACD00FA0235 /* TRCategoriesViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRCategoriesViewModel.m; sourceTree = "<group>"; };
-		38C11E6F1C8D7AE500FA0235 /* TRCategoryViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRCategoryViewModel.h; sourceTree = "<group>"; };
-		38C11E701C8D7AE500FA0235 /* TRCategoryViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRCategoryViewModel.m; sourceTree = "<group>"; };
+		38C11E761C8E662500FA0235 /* TRCategoriesViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRCategoriesViewModel.h; sourceTree = "<group>"; };
+		38C11E771C8E662500FA0235 /* TRCategoriesViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRCategoriesViewModel.m; sourceTree = "<group>"; };
+		38C11E781C8E662500FA0235 /* TRCategoryViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRCategoryViewModel.h; sourceTree = "<group>"; };
+		38C11E791C8E662500FA0235 /* TRCategoryViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRCategoryViewModel.m; sourceTree = "<group>"; };
+		38C11E7C1C8E665B00FA0235 /* TRCategoriesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRCategoriesCell.h; sourceTree = "<group>"; };
+		38C11E7D1C8E665B00FA0235 /* TRCategoriesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRCategoriesCell.m; sourceTree = "<group>"; };
 		70276005029EE88E7F2474B9 /* Pods-TRProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TRProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-TRProject/Pods-TRProject.release.xcconfig"; sourceTree = "<group>"; };
 		7BA1DBF911CCDD099DBC3032 /* Pods-TRProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TRProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TRProject/Pods-TRProject.debug.xcconfig"; sourceTree = "<group>"; };
 		8759E2D9A62BE10618FCC99C /* libPods-TRProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TRProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -347,6 +350,10 @@
 		38C11E641C8D7AAA00FA0235 /* 栏目 */ = {
 			isa = PBXGroup;
 			children = (
+				38C11E761C8E662500FA0235 /* TRCategoriesViewModel.h */,
+				38C11E771C8E662500FA0235 /* TRCategoriesViewModel.m */,
+				38C11E781C8E662500FA0235 /* TRCategoryViewModel.h */,
+				38C11E791C8E662500FA0235 /* TRCategoryViewModel.m */,
 			);
 			path = "栏目";
 			sourceTree = "<group>";
@@ -368,10 +375,6 @@
 		38C11E671C8D7AAA00FA0235 /* 直播 */ = {
 			isa = PBXGroup;
 			children = (
-				38C11E6C1C8D7ACD00FA0235 /* TRCategoriesViewModel.h */,
-				38C11E6D1C8D7ACD00FA0235 /* TRCategoriesViewModel.m */,
-				38C11E6F1C8D7AE500FA0235 /* TRCategoryViewModel.h */,
-				38C11E701C8D7AE500FA0235 /* TRCategoryViewModel.m */,
 			);
 			path = "直播";
 			sourceTree = "<group>";
@@ -407,6 +410,8 @@
 		38C11E721C8E5DB600FA0235 /* 栏目 */ = {
 			isa = PBXGroup;
 			children = (
+				38C11E7C1C8E665B00FA0235 /* TRCategoriesCell.h */,
+				38C11E7D1C8E665B00FA0235 /* TRCategoriesCell.m */,
 			);
 			path = "栏目";
 			sourceTree = "<group>";
@@ -557,7 +562,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38C11E711C8D7AE500FA0235 /* TRCategoryViewModel.m in Sources */,
+				38C11E7B1C8E662500FA0235 /* TRCategoryViewModel.m in Sources */,
 				38A1A3471C745317007EEEB7 /* NSObject+MJExtension.m in Sources */,
 				38A1A3551C745698007EEEB7 /* iCarousel.m in Sources */,
 				38C11E631C8D7A7600FA0235 /* TRRoomModel.m in Sources */,
@@ -570,13 +575,14 @@
 				38A1A3461C745317007EEEB7 /* NSObject+AFNetworking.m in Sources */,
 				38C11E611C8D7A7600FA0235 /* TRIntroModel.m in Sources */,
 				38C11E5E1C8D7A7600FA0235 /* TRCategoryModel.m in Sources */,
+				38C11E7E1C8E665B00FA0235 /* TRCategoriesCell.m in Sources */,
 				38ADA3BB1C626AAF0093502F /* AppDelegate.m in Sources */,
 				382C11861C7E930F00F34BB0 /* NSObject+ViewModel.m in Sources */,
 				38236D021C8D18A200BA928D /* TRBaseViewModel.m in Sources */,
 				38C11E621C8D7A7600FA0235 /* TRRoomListModel.m in Sources */,
 				38236D0B1C8D191A00BA928D /* TRLiveNetManager.m in Sources */,
 				38A1A3481C745317007EEEB7 /* UIScrollView+Refresh.m in Sources */,
-				38C11E6E1C8D7ACD00FA0235 /* TRCategoriesViewModel.m in Sources */,
+				38C11E7A1C8E662500FA0235 /* TRCategoriesViewModel.m in Sources */,
 				38236D081C8D18EC00BA928D /* TRBaseViewController.m in Sources */,
 				382C11831C7E8CDD00F34BB0 /* AppDelegate+System.m in Sources */,
 				38ADA3B81C626AAF0093502F /* main.m in Sources */,
