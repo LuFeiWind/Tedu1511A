@@ -14,6 +14,9 @@
 		382C11831C7E8CDD00F34BB0 /* AppDelegate+System.m in Sources */ = {isa = PBXBuildFile; fileRef = 382C11821C7E8CDD00F34BB0 /* AppDelegate+System.m */; };
 		382C11861C7E930F00F34BB0 /* NSObject+ViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 382C11851C7E930F00F34BB0 /* NSObject+ViewModel.m */; };
 		382C976A1C81D686003D1D51 /* UIView+HUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 382C97691C81D686003D1D51 /* UIView+HUD.m */; };
+		385DB4091C8E77B000790B80 /* TRCategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 385DB4081C8E77B000790B80 /* TRCategoriesViewController.m */; };
+		385DB40C1C8E77BA00790B80 /* TRIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 385DB40B1C8E77BA00790B80 /* TRIntroViewController.m */; };
+		385DB40F1C8E77EA00790B80 /* TRLiveListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 385DB40E1C8E77EA00790B80 /* TRLiveListViewController.m */; };
 		3899BC981C7D87620032ADEA /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3899BC971C7D87620032ADEA /* CFNetwork.framework */; };
 		38A1A33B1C7452CF007EEEB7 /* Factory.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A1A33A1C7452CF007EEEB7 /* Factory.m */; };
 		38A1A3461C745317007EEEB7 /* NSObject+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A1A3411C745317007EEEB7 /* NSObject+AFNetworking.m */; };
@@ -57,6 +60,12 @@
 		382C11851C7E930F00F34BB0 /* NSObject+ViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ViewModel.m"; sourceTree = "<group>"; };
 		382C97681C81D686003D1D51 /* UIView+HUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HUD.h"; sourceTree = "<group>"; };
 		382C97691C81D686003D1D51 /* UIView+HUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HUD.m"; sourceTree = "<group>"; };
+		385DB4071C8E77B000790B80 /* TRCategoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRCategoriesViewController.h; sourceTree = "<group>"; };
+		385DB4081C8E77B000790B80 /* TRCategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRCategoriesViewController.m; sourceTree = "<group>"; };
+		385DB40A1C8E77BA00790B80 /* TRIntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRIntroViewController.h; sourceTree = "<group>"; };
+		385DB40B1C8E77BA00790B80 /* TRIntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRIntroViewController.m; sourceTree = "<group>"; };
+		385DB40D1C8E77EA00790B80 /* TRLiveListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRLiveListViewController.h; sourceTree = "<group>"; };
+		385DB40E1C8E77EA00790B80 /* TRLiveListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRLiveListViewController.m; sourceTree = "<group>"; };
 		3899BC971C7D87620032ADEA /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		38A1A3381C74527F007EEEB7 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		38A1A3391C7452CF007EEEB7 /* Factory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Factory.h; sourceTree = "<group>"; };
@@ -382,6 +391,8 @@
 		38C11E681C8D7AB300FA0235 /* 栏目 */ = {
 			isa = PBXGroup;
 			children = (
+				385DB4071C8E77B000790B80 /* TRCategoriesViewController.h */,
+				385DB4081C8E77B000790B80 /* TRCategoriesViewController.m */,
 			);
 			path = "栏目";
 			sourceTree = "<group>";
@@ -396,6 +407,8 @@
 		38C11E6A1C8D7AB300FA0235 /* 推荐 */ = {
 			isa = PBXGroup;
 			children = (
+				385DB40A1C8E77BA00790B80 /* TRIntroViewController.h */,
+				385DB40B1C8E77BA00790B80 /* TRIntroViewController.m */,
 			);
 			path = "推荐";
 			sourceTree = "<group>";
@@ -403,6 +416,8 @@
 		38C11E6B1C8D7AB300FA0235 /* 直播 */ = {
 			isa = PBXGroup;
 			children = (
+				385DB40D1C8E77EA00790B80 /* TRLiveListViewController.h */,
+				385DB40E1C8E77EA00790B80 /* TRLiveListViewController.m */,
 			);
 			path = "直播";
 			sourceTree = "<group>";
@@ -568,10 +583,12 @@
 				38C11E631C8D7A7600FA0235 /* TRRoomModel.m in Sources */,
 				38C11E601C8D7A7600FA0235 /* TRADListModel.m in Sources */,
 				382C976A1C81D686003D1D51 /* UIView+HUD.m in Sources */,
+				385DB4091C8E77B000790B80 /* TRCategoriesViewController.m in Sources */,
 				38236D051C8D18B100BA928D /* TRBaseModel.m in Sources */,
 				38A1A3511C74560D007EEEB7 /* PSCollectionViewCell.m in Sources */,
 				38C11E5F1C8D7A7600FA0235 /* TRSearchModel.m in Sources */,
 				38A1A33B1C7452CF007EEEB7 /* Factory.m in Sources */,
+				385DB40F1C8E77EA00790B80 /* TRLiveListViewController.m in Sources */,
 				38A1A3461C745317007EEEB7 /* NSObject+AFNetworking.m in Sources */,
 				38C11E611C8D7A7600FA0235 /* TRIntroModel.m in Sources */,
 				38C11E5E1C8D7A7600FA0235 /* TRCategoryModel.m in Sources */,
@@ -584,6 +601,7 @@
 				38A1A3481C745317007EEEB7 /* UIScrollView+Refresh.m in Sources */,
 				38C11E7A1C8E662500FA0235 /* TRCategoriesViewModel.m in Sources */,
 				38236D081C8D18EC00BA928D /* TRBaseViewController.m in Sources */,
+				385DB40C1C8E77BA00790B80 /* TRIntroViewController.m in Sources */,
 				382C11831C7E8CDD00F34BB0 /* AppDelegate+System.m in Sources */,
 				38ADA3B81C626AAF0093502F /* main.m in Sources */,
 				38A1A3501C74560D007EEEB7 /* PSCollectionView.m in Sources */,

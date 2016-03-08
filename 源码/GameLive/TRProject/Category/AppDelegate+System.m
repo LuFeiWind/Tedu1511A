@@ -26,6 +26,22 @@ const void *netStatusKey = &netStatusKey;
     [DDLog addLogger:[DDASLLogger sharedInstance]];
     [DDLog addLogger:[DDTTYLogger sharedInstance]];
     [[DDTTYLogger sharedInstance] setColorsEnabled:YES];
+    
+    [self setupGlobalUI];
+}
+
+- (void)setupGlobalUI{
+    //为了让电池条呈现白色
+    [UINavigationBar appearance].barStyle = UIBarStyleBlack;
+    [UINavigationBar appearance].translucent = NO;
+    [UINavigationBar appearance].barTintColor = kRGBA(251, 51, 41, 1);
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:20]}];
+    
+    
+    [UITabBar appearance].translucent = NO;
+    [UITabBar appearance].barTintColor = kRGBA(237, 236, 235, 1.0);
+    self.window.tintColor = kRGBA(251, 51, 41, 1);
+    
 }
 
 - (BOOL)isOnLine{
