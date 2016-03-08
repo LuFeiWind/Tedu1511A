@@ -55,7 +55,7 @@
         }
     }
     
-    self.dataTask = [TRLiveNetManager getRoomListCompletionHandler:^(TRRoomListModel *model, NSError *error) {
+    self.dataTask = [TRLiveNetManager getRoomListWithPage:tmpPage completionHandler:^(TRRoomListModel *model, NSError *error) {
         if (!error) {
             self.page = model.page;
             self.size = model.size;

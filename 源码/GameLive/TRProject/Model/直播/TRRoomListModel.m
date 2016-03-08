@@ -14,6 +14,12 @@
     return @{@"data" : [TRCategoryDataModel class]};
 }
 
++ (NSString *)replacedKeyFromPropertyName:(NSString *)propertyName{
+    //pageCount特殊, 本身就是驼峰 ,不需要转化
+    if ([propertyName isEqualToString:@"pageCount"]) return propertyName;
+    return [super replacedKeyFromPropertyName:propertyName];
+}
+
 @end
 
 @implementation TRRoomListRecommendModel

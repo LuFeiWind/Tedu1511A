@@ -12,7 +12,7 @@
 #define kBasePath @"http://www.quanmin.tv/"
 
 /**直播房间列表*/
-#define kRoomsPath @"json/play/list.json"
+#define kRoomsPath @"json/play/list%@.json"
 
 /** 获取房间详细信息 */
 #define kRoomDetailPath @"json/rooms/%@/info.json"

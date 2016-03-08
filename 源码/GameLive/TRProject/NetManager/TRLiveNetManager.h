@@ -19,7 +19,7 @@
 
 
 /** 获取游戏房间列表 */
-+ (id)getRoomListCompletionHandler:kCompetionHandlerBlock
++ (id)getRoomListWithPage:(NSInteger)page completionHandler:kCompetionHandlerBlock
 
 /**
  *  获取游戏房间的详细信息

@@ -10,8 +10,13 @@
 
 @implementation TRLiveNetManager
 
-+ (id)getRoomListCompletionHandler:(void (^)(id, NSError *))completionHandler{
-    return [self GET:kRoomsPath parameters:nil progress:nil completionHandler:^(id responseObj, NSError *error) {
++ (id)getRoomListWithPage:(NSInteger)page completionHandler:(void (^)(id, NSError *))completionHandler{
+    NSString *pageStr = [NSString stringWithFormat:@"_%ld", page];
+    if (page == 0) {
+        pageStr = @"";
+    }
+    NSString *path = [NSString stringWithFormat:kRoomsPath, pageStr];
+    return [self GET:path parameters:nil progress:nil completionHandler:^(id responseObj, NSError *error) {
         completionHandler([TRRoomListModel parse:responseObj], error);
     }];
 }
