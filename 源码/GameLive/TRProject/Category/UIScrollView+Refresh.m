@@ -37,6 +37,11 @@
 - (void)beginFooterRefresh{
     [self.mj_footer beginRefreshing];
 }
+
+/** 结束脚步刷新并设置没有更多数据 */
+- (void)endFooterRefreshWithNoMoreData{
+    [self.mj_footer endRefreshingWithNoMoreData];
+}
 @end
 
 

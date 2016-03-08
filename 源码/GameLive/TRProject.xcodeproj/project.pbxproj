@@ -31,6 +31,8 @@
 		38A641FA1C8C225D00FCBF96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38A641F71C8C225D00FCBF96 /* Main.storyboard */; };
 		38ADA3B81C626AAF0093502F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 38ADA3B71C626AAF0093502F /* main.m */; };
 		38ADA3BB1C626AAF0093502F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 38ADA3BA1C626AAF0093502F /* AppDelegate.m */; };
+		38BABC3A1C8E99EB00CE45C9 /* TRCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38BABC391C8E99EB00CE45C9 /* TRCategoryViewController.m */; };
+		38BABC3D1C8E9B7600CE45C9 /* TRCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 38BABC3C1C8E9B7600CE45C9 /* TRCategoryCell.m */; };
 		38C11E5D1C8D7A7600FA0235 /* TRCategoriesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C11E4D1C8D7A7600FA0235 /* TRCategoriesModel.m */; };
 		38C11E5E1C8D7A7600FA0235 /* TRCategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C11E4F1C8D7A7600FA0235 /* TRCategoryModel.m */; };
 		38C11E5F1C8D7A7600FA0235 /* TRSearchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C11E521C8D7A7600FA0235 /* TRSearchModel.m */; };
@@ -92,6 +94,10 @@
 		38ADA3B91C626AAF0093502F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		38ADA3BA1C626AAF0093502F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		38ADA3C71C626AAF0093502F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		38BABC381C8E99EB00CE45C9 /* TRCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRCategoryViewController.h; sourceTree = "<group>"; };
+		38BABC391C8E99EB00CE45C9 /* TRCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRCategoryViewController.m; sourceTree = "<group>"; };
+		38BABC3B1C8E9B7600CE45C9 /* TRCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRCategoryCell.h; sourceTree = "<group>"; };
+		38BABC3C1C8E9B7600CE45C9 /* TRCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRCategoryCell.m; sourceTree = "<group>"; };
 		38C11E4C1C8D7A7600FA0235 /* TRCategoriesModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRCategoriesModel.h; sourceTree = "<group>"; };
 		38C11E4D1C8D7A7600FA0235 /* TRCategoriesModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRCategoriesModel.m; sourceTree = "<group>"; };
 		38C11E4E1C8D7A7600FA0235 /* TRCategoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRCategoryModel.h; sourceTree = "<group>"; };
@@ -393,6 +399,8 @@
 			children = (
 				385DB4071C8E77B000790B80 /* TRCategoriesViewController.h */,
 				385DB4081C8E77B000790B80 /* TRCategoriesViewController.m */,
+				38BABC381C8E99EB00CE45C9 /* TRCategoryViewController.h */,
+				38BABC391C8E99EB00CE45C9 /* TRCategoryViewController.m */,
 			);
 			path = "栏目";
 			sourceTree = "<group>";
@@ -427,6 +435,8 @@
 			children = (
 				38C11E7C1C8E665B00FA0235 /* TRCategoriesCell.h */,
 				38C11E7D1C8E665B00FA0235 /* TRCategoriesCell.m */,
+				38BABC3B1C8E9B7600CE45C9 /* TRCategoryCell.h */,
+				38BABC3C1C8E9B7600CE45C9 /* TRCategoryCell.m */,
 			);
 			path = "栏目";
 			sourceTree = "<group>";
@@ -579,6 +589,7 @@
 			files = (
 				38C11E7B1C8E662500FA0235 /* TRCategoryViewModel.m in Sources */,
 				38A1A3471C745317007EEEB7 /* NSObject+MJExtension.m in Sources */,
+				38BABC3A1C8E99EB00CE45C9 /* TRCategoryViewController.m in Sources */,
 				38A1A3551C745698007EEEB7 /* iCarousel.m in Sources */,
 				38C11E631C8D7A7600FA0235 /* TRRoomModel.m in Sources */,
 				38C11E601C8D7A7600FA0235 /* TRADListModel.m in Sources */,
@@ -600,6 +611,7 @@
 				38236D0B1C8D191A00BA928D /* TRLiveNetManager.m in Sources */,
 				38A1A3481C745317007EEEB7 /* UIScrollView+Refresh.m in Sources */,
 				38C11E7A1C8E662500FA0235 /* TRCategoriesViewModel.m in Sources */,
+				38BABC3D1C8E9B7600CE45C9 /* TRCategoryCell.m in Sources */,
 				38236D081C8D18EC00BA928D /* TRBaseViewController.m in Sources */,
 				385DB40C1C8E77BA00790B80 /* TRIntroViewController.m in Sources */,
 				382C11831C7E8CDD00F34BB0 /* AppDelegate+System.m in Sources */,

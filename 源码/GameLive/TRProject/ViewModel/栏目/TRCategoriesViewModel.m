@@ -30,6 +30,10 @@
     return [self modelForRow:row].slug;
 }
 
+- (NSString *)categoryNameForRow:(NSInteger)row{
+    return [self modelForRow:row].name;
+}
+
 - (void)getDataWithRequestMode:(RequestMode)requestMode completionHandler:(void (^)(NSError *))completionHandler{
     self.dataTask = [TRLiveNetManager getCategoriesCompletionHandler:^(id model, NSError *error) {
         if (!error) {

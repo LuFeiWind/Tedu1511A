@@ -29,8 +29,12 @@
     }];
 }
 
-+ (id)getCategoryWithSlug:(NSString *)slug completionHandler:(void (^)(id, NSError *))completionHandler{
-    NSString *path = [NSString stringWithFormat:kCategoryRoomsPath, slug];
++ (id)getCategoryWithSlug:(NSString *)slug page:(NSInteger)page completionHandler:(void (^)(id, NSError *))completionHandler{
+    NSString *pageStr = [NSString stringWithFormat:@"_%ld", page];
+    if (page == 0) {
+        pageStr = @"";
+    }
+    NSString *path = [NSString stringWithFormat:kCategoryRoomsPath, slug, pageStr];
     return [self GET:path parameters:nil progress:nil completionHandler:^(id responseObj, NSError *error) {
         completionHandler([TRCategoryModel parse:responseObj], error);
     }];

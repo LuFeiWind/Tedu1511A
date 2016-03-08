@@ -1,49 +1,44 @@
 //
-//  TRCategoriesViewController.m
+//  TRCategoryViewController.m
 //  TRProject
 //
 //  Created by jiyingxin on 16/3/8.
 //  Copyright © 2016年 Tarena. All rights reserved.
 //
 
-#import "TRCategoriesViewController.h"
-#import "TRCategoriesViewModel.h"
-#import "TRCategoriesCell.h"
 #import "TRCategoryViewController.h"
+#import "TRCategoryViewModel.h"
+#import "TRCategoryCell.h"
 
 #define kCellSpace          8
-#define kCellNumPerLine     3
+#define kCellNumPerLine     2
 
-@interface TRCategoriesViewController ()<UICollectionViewDataSource, UICollectionViewDelegate>
-@property (nonatomic) TRCategoriesViewModel *categoriesVM;
+@interface TRCategoryViewController ()<UICollectionViewDataSource, UICollectionViewDelegate>
+@property (nonatomic) TRCategoryViewModel *categoryVM;
 @property (nonatomic) UICollectionView *collectionView;
 @property (nonatomic) UICollectionViewFlowLayout *flowLayout;
 @end
 
-@implementation TRCategoriesViewController
+@implementation TRCategoryViewController
 #pragma mark - UICollectionView delegate
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return self.categoriesVM.rowNumber;
+    return self.categoryVM.rowNumber;
 }
-
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    TRCategoriesCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
-    cell.nameLb.text = [self.categoriesVM titleForRow:indexPath.row];
-    [cell.iconIV setImageWithURL:[self.categoriesVM iconURLForRow:indexPath.row] placeholderImage:[UIImage imageNamed:@"分类"]];
+    TRCategoryCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
+    [cell.iconIV setImageWithURL:[self.categoryVM iconURLForRow:indexPath.row] placeholderImage:[UIImage imageNamed:@"分类"]];
+    cell.titleLb.text = [self.categoryVM titleForRow:indexPath.row];
+    cell.viewLb.text = [self.categoryVM viewForRow:indexPath.row];
+    cell.nickLb.text = [self.categoryVM nickForRow:indexPath.row];
     return cell;
 }
 
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    TRCategoryViewController *vc = [[TRCategoryViewController alloc] initWithSlug:[self.categoriesVM slugForRow:indexPath.row] categoryName:[self.categoriesVM categoryNameForRow:indexPath.row]];
-    [self.navigationController pushViewController:vc animated:YES];
-}
-
 #pragma mark - Life Circle
-- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
-    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-        self.title = @"栏目";
-        self.tabBarItem.image = [UIImage imageNamed:@"栏目_默认"];
-        self.tabBarItem.selectedImage = [UIImage imageNamed:@"栏目_焦点"];
+- (instancetype)initWithSlug:(NSString *)slug categoryName:(NSString *)categoryName{
+    if (self = [self init]) {
+        self.slug = slug;
+        self.categoryName = categoryName;
+        self.title = categoryName;
     }
     return self;
 }
@@ -51,21 +46,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = kBGColor;
     [self.collectionView beginHeaderRefresh];
+    [Factory addBackItemToVC:self];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 #pragma mark - Lazy Load
-- (TRCategoriesViewModel *)categoriesVM {
-    if(_categoriesVM == nil) {
-        _categoriesVM = [[TRCategoriesViewModel alloc] init];
+- (TRCategoryViewModel *)categoryVM {
+    if(_categoryVM == nil) {
+        _categoryVM = [[TRCategoryViewModel alloc] initWithSlug:_slug];
     }
-    return _categoriesVM;
+    return _categoryVM;
 }
 
 - (UICollectionView *)collectionView {
@@ -80,17 +74,36 @@
         _collectionView.backgroundColor = kBGColor;
         WK(weakSelf);
         [_collectionView addHeaderRefresh:^{
-            [weakSelf.categoriesVM getDataWithRequestMode:RequestModeMore completionHandler:^(NSError *error) {
+            [weakSelf.categoryVM getDataWithRequestMode:RequestModeRefresh completionHandler:^(NSError *error) {
                 if (!error) {
                     [weakSelf.collectionView reloadData];
                 }else{
                     [weakSelf.view showWarning:error.localizedDescription];
                 }
+                if (weakSelf.categoryVM.page + 1 >= weakSelf.categoryVM.pageCount) {
+                    [weakSelf.collectionView endFooterRefreshWithNoMoreData];
+                }
                 [weakSelf.collectionView endHeaderRefresh];
             }];
         }];
-        [_collectionView registerClass:[TRCategoriesCell class] forCellWithReuseIdentifier:@"Cell"];
-        _collectionView.showsVerticalScrollIndicator = NO;
+        
+        [_collectionView addBackFooterRefresh:^{
+            [weakSelf.categoryVM getDataWithRequestMode:RequestModeMore completionHandler:^(NSError *error) {
+                if (!error) {
+                    [weakSelf.collectionView reloadData];
+                }else{
+                    [weakSelf.view showWarning:error.localizedDescription];
+                }
+                if (weakSelf.categoryVM.page + 1 >= weakSelf.categoryVM.pageCount) {
+                    [weakSelf.collectionView endFooterRefreshWithNoMoreData];
+                }else{
+                    [weakSelf.collectionView endFooterRefresh];
+                }
+                
+            }];
+        }];
+        
+        [_collectionView registerClass:[TRCategoryCell class] forCellWithReuseIdentifier:@"Cell"];
     }
     return _collectionView;
 }
@@ -102,11 +115,13 @@
         _flowLayout.minimumLineSpacing = kCellSpace;
         _flowLayout.minimumInteritemSpacing = kCellSpace;
         CGFloat width = (kScreenW - (kCellNumPerLine + 1) * kCellSpace)/kCellNumPerLine;
-        //        23 * 38
-        CGFloat height = 38 * width / 23;
+        //        350 * 266
+        CGFloat height = 266 * width / 350;
         _flowLayout.itemSize = CGSizeMake(width, height);
     }
     return _flowLayout;
 }
+
+
 
 @end

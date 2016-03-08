@@ -17,6 +17,11 @@
     return self;
 }
 
+- (instancetype)init{
+    NSAssert(NO, @"%s 比如使用initWithSlug:进行初始化", __FUNCTION__);
+    return nil;
+}
+
 - (NSInteger)rowNumber{
     return self.roomList.count;
 }
@@ -40,13 +45,24 @@
 - (NSString *)viewForRow:(NSInteger)row{
     NSString *views = [self modelForRow:row].view;
     if (views.doubleValue >= 10000) {
-        views = [NSString stringWithFormat:@"%.2f", views.doubleValue/10000.0];
+        views = [NSString stringWithFormat:@"%.2f万", views.doubleValue/10000.0];
     }
     return views;
 }
 
 - (void)getDataWithRequestMode:(RequestMode)requestMode completionHandler:(void (^)(NSError *))completionHandler{
-    self.dataTask = [TRLiveNetManager getCategoryWithSlug:_slug completionHandler:^(TRCategoryModel *model, NSError *error) {
+    NSInteger tmpPage = 0;
+    switch (requestMode) {
+        case RequestModeRefresh: {
+            tmpPage = 0;
+            break;
+        }
+        case RequestModeMore: {
+            tmpPage = _page + 1;
+            break;
+        }
+    }
+    self.dataTask = [TRLiveNetManager getCategoryWithSlug:_slug page:tmpPage completionHandler:^(TRCategoryModel *model, NSError *error) {
         if (!error) {
             self.page = model.page;
             self.size = model.size;

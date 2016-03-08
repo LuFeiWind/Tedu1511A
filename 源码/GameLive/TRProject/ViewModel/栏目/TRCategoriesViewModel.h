@@ -18,4 +18,5 @@
 - (NSString *)titleForRow:(NSInteger)row;
 - (TRCategoriesModel *)modelForRow:(NSInteger)row;
 - (NSString *)slugForRow:(NSInteger)row;
+- (NSString *)categoryNameForRow:(NSInteger)row;
 @end

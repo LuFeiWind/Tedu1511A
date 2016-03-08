@@ -35,7 +35,7 @@
 + (id)getCategoriesCompletionHandler:kCompetionHandlerBlock
 
 /** 获得某种类型的房间列表 */
-+ (id)getCategoryWithSlug:(NSString *)slug completionHandler:kCompetionHandlerBlock
++ (id)getCategoryWithSlug:(NSString *)slug page:(NSInteger)page completionHandler:kCompetionHandlerBlock
 
 
 /** 搜索 */
