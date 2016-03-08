@@ -39,7 +39,7 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     AVPlayerViewController *vc = [AVPlayerViewController new];
-    AVPlayer *player = [AVPlayer playerWithURL:[NSURL URLWithString:@"http://hls.quanmin.tv/live/674228f/playlist.m3u8"]];
+    AVPlayer *player = [AVPlayer playerWithURL:[self.categoryVM videoURLForRow:indexPath.row]];
     vc.player = player;
     [vc.player play];
     [self presentViewController:vc animated:YES completion:nil];

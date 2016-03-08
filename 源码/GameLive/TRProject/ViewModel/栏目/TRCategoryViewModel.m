@@ -51,8 +51,8 @@
 }
 
 - (NSURL *)videoURLForRow:(NSInteger)row{
-    //    return [NSURL URLWithString:[self modelForRow:row].];
-    return nil;
+    NSString *path = [NSString stringWithFormat:kVideoPath, [self modelForRow:row].uid];
+    return [NSURL URLWithString:path];
 }
 
 - (void)getDataWithRequestMode:(RequestMode)requestMode completionHandler:(void (^)(NSError *))completionHandler{
