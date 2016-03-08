@@ -22,6 +22,7 @@
 + (NSDictionary *)mj_objectClassInArray{
     return [self objClassInArray];
 }
+
 + (NSDictionary *)objClassInArray{
     return nil;
 }

@@ -1,5 +1,5 @@
 //
-//  TRBaseViewModel.m
+//  TRCategoryViewModel.h
 //  TRProject
 //
 //  Created by jiyingxin on 16/3/7.
@@ -8,8 +8,6 @@
 
 #import "TRBaseViewModel.h"
 
-@implementation TRBaseViewModel
-
-MJExtensionCodingImplementation
+@interface TRCategoryViewModel : TRBaseViewModel
 
 @end
