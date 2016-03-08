@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		381FFAC91C8EB3FC000206B2 /* TRLiveListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 381FFAC81C8EB3FC000206B2 /* TRLiveListViewModel.m */; };
 		38236D021C8D18A200BA928D /* TRBaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 38236D011C8D18A200BA928D /* TRBaseViewModel.m */; };
 		38236D051C8D18B100BA928D /* TRBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 38236D041C8D18B100BA928D /* TRBaseModel.m */; };
 		38236D081C8D18EC00BA928D /* TRBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38236D071C8D18EC00BA928D /* TRBaseViewController.m */; };
@@ -47,6 +48,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		381FFAC71C8EB3FC000206B2 /* TRLiveListViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRLiveListViewModel.h; sourceTree = "<group>"; };
+		381FFAC81C8EB3FC000206B2 /* TRLiveListViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRLiveListViewModel.m; sourceTree = "<group>"; };
 		38236D001C8D18A200BA928D /* TRBaseViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRBaseViewModel.h; sourceTree = "<group>"; };
 		38236D011C8D18A200BA928D /* TRBaseViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRBaseViewModel.m; sourceTree = "<group>"; };
 		38236D031C8D18B100BA928D /* TRBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRBaseModel.h; sourceTree = "<group>"; };
@@ -390,6 +393,8 @@
 		38C11E671C8D7AAA00FA0235 /* 直播 */ = {
 			isa = PBXGroup;
 			children = (
+				381FFAC71C8EB3FC000206B2 /* TRLiveListViewModel.h */,
+				381FFAC81C8EB3FC000206B2 /* TRLiveListViewModel.m */,
 			);
 			path = "直播";
 			sourceTree = "<group>";
@@ -602,6 +607,7 @@
 				38A1A33B1C7452CF007EEEB7 /* Factory.m in Sources */,
 				385DB40F1C8E77EA00790B80 /* TRLiveListViewController.m in Sources */,
 				38A1A3461C745317007EEEB7 /* NSObject+AFNetworking.m in Sources */,
+				381FFAC91C8EB3FC000206B2 /* TRLiveListViewModel.m in Sources */,
 				38C11E611C8D7A7600FA0235 /* TRIntroModel.m in Sources */,
 				38C11E5E1C8D7A7600FA0235 /* TRCategoryModel.m in Sources */,
 				38C11E7E1C8E665B00FA0235 /* TRCategoriesCell.m in Sources */,

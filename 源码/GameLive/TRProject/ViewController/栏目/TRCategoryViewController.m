@@ -12,7 +12,6 @@
 
 @import AVFoundation;
 @import AVKit;
-@import MediaPlayer;
 
 #define kCellSpace          8
 #define kCellNumPerLine     2
