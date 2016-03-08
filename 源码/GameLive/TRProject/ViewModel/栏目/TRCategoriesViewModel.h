@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "TRBaseViewModel.h"
 #import "TRLiveNetManager.h"
-#import "NSObject+ViewModel.h"
+
 @interface TRCategoriesViewModel : TRBaseViewModel
 @property (nonatomic) NSInteger rowNumber;
 @property (nonatomic) NSArray *categories;

@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "NSObject+ViewModel.h"
 @interface TRBaseViewModel : NSObject
 
 @end

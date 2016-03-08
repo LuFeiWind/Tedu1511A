@@ -35,6 +35,7 @@
     if (!_iconIV) {
         _iconIV = [UIImageView new];
         [self.contentView addSubview:_iconIV];
+        _iconIV.contentMode = UIViewContentModeScaleAspectFill;
         [_iconIV mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.left.right.equalTo(0);
             make.bottom.equalTo(-30);
