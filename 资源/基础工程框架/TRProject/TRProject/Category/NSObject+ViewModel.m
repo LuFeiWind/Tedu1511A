@@ -22,7 +22,7 @@ static const void *dataTaskKey = &dataTaskKey;
 }
 
 
-- (void)getDataWithRequestMode:(RequestMode)requestMode completionHanle:(void (^)(NSError *))completionHandle{}
+- (void)getDataWithRequestMode:(RequestMode)requestMode completionHandler:(void (^)(NSError *))completionHandler{}
 
 - (void)resumeTask{
     [self.dataTask resume];

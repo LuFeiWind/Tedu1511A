@@ -21,43 +21,10 @@
 #define kAppdelegate ((AppDelegate *)[UIApplication sharedApplication].delegate)
 
 //把self转化为 __weak __block的方式, 方便的在block中使用而不导致内存循环应用问题
-
 //在宏中使用 \ 可以换行
 #define WK(weakSelf) \
 __block __weak __typeof(&*self)weakSelf = self;\
 
-
-//实现归档和解档, 需要遵循 NSCoding 协议  和 引入 <objc/runtime.h>
-
-#define kTeduCoding \
-- (void)encodeWithCoder:(NSCoder *)aCoder{\
-unsigned int outCount = 0;\
-Ivar *varList = class_copyIvarList(self.class, &outCount);\
-for (int i = 0; i< outCount; i++) {\
-Ivar tmpIvar = varList[i];\
-const char *name = ivar_getName(tmpIvar);\
-NSString *propertyName = [NSString stringWithUTF8String:name];\
-id obj = [self valueForKey:propertyName];\
-[aCoder encodeObject:obj forKey:propertyName];\
-}\
-free(varList);\
-}\
-\
-- (instancetype)initWithCoder:(NSCoder *)aDecoder{\
-if (self = [super init]) {\
-unsigned int outCount = 0;\
-Ivar *varList = class_copyIvarList(self.class, &outCount);\
-for (int i = 0; i < outCount; i++) {\
-Ivar tmpVar = varList[i];\
-const char *name = ivar_getName(tmpVar);\
-NSString *propertyName = [NSString stringWithUTF8String:name];\
-id obj = [aDecoder decodeObjectForKey:propertyName];\
-[self setValue:obj forKey:propertyName];\
-}\
-free(varList);\
-}\
-return self;\
-}\
-
+#define kBGColor kRGBA(234,234,234,1)
 
 #endif /* Constant_h */

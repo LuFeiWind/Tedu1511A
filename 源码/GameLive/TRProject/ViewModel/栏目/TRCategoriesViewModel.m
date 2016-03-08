@@ -30,12 +30,12 @@
     return [self modelForRow:row].slug;
 }
 
-- (void)getDataWithRequestMode:(RequestMode)requestMode completionHanle:(void (^)(NSError *))completionHandle{
+- (void)getDataWithRequestMode:(RequestMode)requestMode completionHandler:(void (^)(NSError *))completionHandler{
     self.dataTask = [TRLiveNetManager getCategoriesCompletionHandler:^(id model, NSError *error) {
         if (!error) {
             self.categories = model;
         }
-        completionHandle(error);
+        completionHandler(error);
     }];
 }
 

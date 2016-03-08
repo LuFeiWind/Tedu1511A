@@ -10,6 +10,7 @@
 
 @interface TRCategoriesCell : UICollectionViewCell
 
-
+@property (nonatomic) UIImageView *iconIV;
+@property (nonatomic) UILabel *nameLb;
 
 @end

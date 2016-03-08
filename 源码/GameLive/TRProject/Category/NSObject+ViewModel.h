@@ -12,7 +12,7 @@ typedef NS_ENUM(NSUInteger, RequestMode) {
     RequestModeMore,
 };
 @interface NSObject (ViewModel)
-- (void)getDataWithRequestMode:(RequestMode)requestMode completionHanler:(void(^)(NSError *error))completionHandler;
+- (void)getDataWithRequestMode:(RequestMode)requestMode completionHandler:(void(^)(NSError *error))completionHandler;
 /** 用于保存当前网络请求任务 */
 @property (nonatomic) NSURLSessionDataTask *dataTask;
 - (void)cancelTask; //取消任务
