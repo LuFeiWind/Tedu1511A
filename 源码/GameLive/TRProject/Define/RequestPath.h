@@ -32,5 +32,9 @@
 /** 推荐页面 */
 #define kIntroPath @"json/page/app-index/info.json"
 
+/** 直播视频的网址 */
+
+#define kVideoPath @"http://hls.quanmin.tv/live/%@/playlist.m3u8"
+
 
 #endif /* RequestPath_h */

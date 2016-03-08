@@ -50,6 +50,11 @@
     return views;
 }
 
+- (NSURL *)videoURLForRow:(NSInteger)row{
+    //    return [NSURL URLWithString:[self modelForRow:row].];
+    return nil;
+}
+
 - (void)getDataWithRequestMode:(RequestMode)requestMode completionHandler:(void (^)(NSError *))completionHandler{
     NSInteger tmpPage = 0;
     switch (requestMode) {

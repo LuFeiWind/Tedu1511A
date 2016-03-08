@@ -28,4 +28,5 @@
 - (NSString *)titleForRow:(NSInteger)row;
 - (NSString *)nickForRow:(NSInteger)row;
 - (NSString *)viewForRow:(NSInteger)row;
+- (NSURL *)videoURLForRow:(NSInteger)row;
 @end

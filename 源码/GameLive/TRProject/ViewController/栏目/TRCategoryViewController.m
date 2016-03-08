@@ -10,6 +10,10 @@
 #import "TRCategoryViewModel.h"
 #import "TRCategoryCell.h"
 
+@import AVFoundation;
+@import AVKit;
+@import MediaPlayer;
+
 #define kCellSpace          8
 #define kCellNumPerLine     2
 
@@ -31,6 +35,14 @@
     cell.viewLb.text = [self.categoryVM viewForRow:indexPath.row];
     cell.nickLb.text = [self.categoryVM nickForRow:indexPath.row];
     return cell;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    AVPlayerViewController *vc = [AVPlayerViewController new];
+    AVPlayer *player = [AVPlayer playerWithURL:[NSURL URLWithString:@"http://hls.quanmin.tv/live/674228f/playlist.m3u8"]];
+    vc.player = player;
+    [vc.player play];
+    [self presentViewController:vc animated:YES completion:nil];
 }
 
 #pragma mark - Life Circle

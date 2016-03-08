@@ -351,25 +351,41 @@ sup {
 
 <h3 id="toc_3">直播房间列表</h3>
 
-<div><pre><code class="language-none">http://www.quanmin.tv/json/play/list.json</code></pre></div>
+<div><pre><code class="language-none">http://www.quanmin.tv/json/play/list.json
 
-<h3 id="toc_4">获取房间信息</h3>
+分页加载
+http://www.quanmin.tv/json/play/list_1.json
+http://www.quanmin.tv/json/play/list_2.json</code></pre></div>
+
+<h2 id="toc_4">直播地址</h2>
+
+<p>下方是超清的直播地址, 其他清晰度经过测试无法使用MP或者AVPlayer进行播放,<br>
+下方直播地址是固定的, 只需要把里面的674228换成房间的id即可.<br>
+直播界面只要点击房间能够弹出视频就可以了</p>
+
+<div><pre><code class="language-none">http://hls.quanmin.tv/live/674228/playlist.m3u8</code></pre></div>
+
+<h3 id="toc_5">获取房间信息  ---  可以不用解析此处</h3>
 
 <p>263925是uid  </p>
 
 <div><pre><code class="language-none">http://www.quanmin.tv/json/rooms/263925/info.json</code></pre></div>
 
-<h3 id="toc_5">栏目列表</h3>
+<h3 id="toc_6">栏目列表</h3>
 
 <div><pre><code class="language-none">http://www.quanmin.tv/json/categories/list.json</code></pre></div>
 
-<h3 id="toc_6">游戏列表</h3>
+<h3 id="toc_7">游戏列表</h3>
 
 <p>其中的<code>lol</code>是栏目列表的<code>slug</code>key </p>
 
-<div><pre><code class="language-none">http://www.quanmin.tv/json/categories/lol/list.json</code></pre></div>
+<div><pre><code class="language-none">http://www.quanmin.tv/json/categories/lol/list.json
 
-<h3 id="toc_7">搜索功能</h3>
+分页加载
+http://www.quanmin.tv/json/categories/lol/list_1.json
+http://www.quanmin.tv/json/categories/lol/list_2.json</code></pre></div>
+
+<h3 id="toc_8">搜索功能</h3>
 
 <p>这是一个post请求</p>
 
@@ -385,7 +401,7 @@ sup {
 
 }];</code></pre></div>
 
-<h3 id="toc_8">推荐</h3>
+<h3 id="toc_9">推荐</h3>
 
 <p>广告</p>
 
