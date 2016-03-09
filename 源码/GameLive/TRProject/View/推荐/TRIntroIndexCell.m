@@ -25,6 +25,14 @@
                 [_ic0 scrollToItemAtIndex:_ic0.currentItemIndex+1 animated:YES];
             }
         } repeats:YES];
+        //最下方添加一条分割线
+        UIView *lineView = [UIView new];
+        lineView.backgroundColor = kRGBA(180, 180, 180, 1);
+        [self.contentView addSubview:lineView];
+        [lineView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.bottom.left.right.equalTo(0);
+            make.height.equalTo(1);
+        }];
     }
     return self;
 }

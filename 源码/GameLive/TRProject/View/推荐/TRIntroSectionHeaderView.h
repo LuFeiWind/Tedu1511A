@@ -26,4 +26,9 @@ typedef NS_ENUM(NSUInteger, IntroBtnMode) {
 @property (nonatomic) UILabel *titleLb;
 @property (nonatomic) NSIndexPath *indexPath;
 @property (nonatomic) IntroBtnMode btnMode;
+@property (nonatomic) id<TRIntroSectionHeaderViewDelegate> delegate;
+/** 换一换功能 */
+@property (nonatomic) UIControl *changeControl;
+/** 更多功能 */
+@property (nonatomic) UIControl *moreControl;
 @end

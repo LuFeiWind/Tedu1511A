@@ -187,6 +187,7 @@
     if (indexPath.section == 1) {
         headerView.btnMode = IntroBtnModeChange;
     }
+    headerView.indexPath = indexPath;
     return headerView;
 }
 
