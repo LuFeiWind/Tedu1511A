@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3811F05E1C8FBED2000463AB /* TRIntroViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3811F05D1C8FBED2000463AB /* TRIntroViewModel.m */; };
+		3811F0611C8FC58A000463AB /* TRSearchViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3811F0601C8FC58A000463AB /* TRSearchViewModel.m */; };
+		3811F0641C8FCB8A000463AB /* TRIntroIndexCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3811F0631C8FCB8A000463AB /* TRIntroIndexCell.m */; };
 		381FFAC91C8EB3FC000206B2 /* TRLiveListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 381FFAC81C8EB3FC000206B2 /* TRLiveListViewModel.m */; };
 		38236D021C8D18A200BA928D /* TRBaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 38236D011C8D18A200BA928D /* TRBaseViewModel.m */; };
 		38236D051C8D18B100BA928D /* TRBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 38236D041C8D18B100BA928D /* TRBaseModel.m */; };
@@ -48,6 +51,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3811F0561C8FB6A1000463AB /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		3811F0581C8FB6A7000463AB /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
+		3811F05A1C8FB6AC000463AB /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		3811F05C1C8FBED2000463AB /* TRIntroViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRIntroViewModel.h; sourceTree = "<group>"; };
+		3811F05D1C8FBED2000463AB /* TRIntroViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRIntroViewModel.m; sourceTree = "<group>"; };
+		3811F05F1C8FC58A000463AB /* TRSearchViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRSearchViewModel.h; sourceTree = "<group>"; };
+		3811F0601C8FC58A000463AB /* TRSearchViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRSearchViewModel.m; sourceTree = "<group>"; };
+		3811F0621C8FCB8A000463AB /* TRIntroIndexCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRIntroIndexCell.h; sourceTree = "<group>"; };
+		3811F0631C8FCB8A000463AB /* TRIntroIndexCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRIntroIndexCell.m; sourceTree = "<group>"; };
 		381FFAC71C8EB3FC000206B2 /* TRLiveListViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRLiveListViewModel.h; sourceTree = "<group>"; };
 		381FFAC81C8EB3FC000206B2 /* TRLiveListViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRLiveListViewModel.m; sourceTree = "<group>"; };
 		38236D001C8D18A200BA928D /* TRBaseViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRBaseViewModel.h; sourceTree = "<group>"; };
@@ -379,6 +391,8 @@
 		38C11E651C8D7AAA00FA0235 /* 其他 */ = {
 			isa = PBXGroup;
 			children = (
+				3811F05F1C8FC58A000463AB /* TRSearchViewModel.h */,
+				3811F0601C8FC58A000463AB /* TRSearchViewModel.m */,
 			);
 			path = "其他";
 			sourceTree = "<group>";
@@ -386,6 +400,8 @@
 		38C11E661C8D7AAA00FA0235 /* 推荐 */ = {
 			isa = PBXGroup;
 			children = (
+				3811F05C1C8FBED2000463AB /* TRIntroViewModel.h */,
+				3811F05D1C8FBED2000463AB /* TRIntroViewModel.m */,
 			);
 			path = "推荐";
 			sourceTree = "<group>";
@@ -456,6 +472,8 @@
 		38C11E741C8E5DB600FA0235 /* 推荐 */ = {
 			isa = PBXGroup;
 			children = (
+				3811F0621C8FCB8A000463AB /* TRIntroIndexCell.h */,
+				3811F0631C8FCB8A000463AB /* TRIntroIndexCell.m */,
 			);
 			path = "推荐";
 			sourceTree = "<group>";
@@ -479,6 +497,9 @@
 		CA5127F42421C94949953D16 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3811F05A1C8FB6AC000463AB /* libiconv.tbd */,
+				3811F0581C8FB6A7000463AB /* libbz2.tbd */,
+				3811F0561C8FB6A1000463AB /* libz.tbd */,
 				3899BC971C7D87620032ADEA /* CFNetwork.framework */,
 				8759E2D9A62BE10618FCC99C /* libPods-TRProject.a */,
 			);
@@ -519,7 +540,7 @@
 				TargetAttributes = {
 					38ADA3B21C626AAF0093502F = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = Q4A4E5KTY4;
+						DevelopmentTeam = KS8BTZW5V4;
 					};
 				};
 			};
@@ -596,6 +617,7 @@
 				38C11E7B1C8E662500FA0235 /* TRCategoryViewModel.m in Sources */,
 				38A1A3471C745317007EEEB7 /* NSObject+MJExtension.m in Sources */,
 				38BABC3A1C8E99EB00CE45C9 /* TRCategoryViewController.m in Sources */,
+				3811F0641C8FCB8A000463AB /* TRIntroIndexCell.m in Sources */,
 				38A1A3551C745698007EEEB7 /* iCarousel.m in Sources */,
 				38C11E631C8D7A7600FA0235 /* TRRoomModel.m in Sources */,
 				38C11E601C8D7A7600FA0235 /* TRADListModel.m in Sources */,
@@ -613,9 +635,11 @@
 				38C11E7E1C8E665B00FA0235 /* TRCategoriesCell.m in Sources */,
 				38ADA3BB1C626AAF0093502F /* AppDelegate.m in Sources */,
 				382C11861C7E930F00F34BB0 /* NSObject+ViewModel.m in Sources */,
+				3811F0611C8FC58A000463AB /* TRSearchViewModel.m in Sources */,
 				38236D021C8D18A200BA928D /* TRBaseViewModel.m in Sources */,
 				38C11E621C8D7A7600FA0235 /* TRRoomListModel.m in Sources */,
 				38236D0B1C8D191A00BA928D /* TRLiveNetManager.m in Sources */,
+				3811F05E1C8FBED2000463AB /* TRIntroViewModel.m in Sources */,
 				38A1A3481C745317007EEEB7 /* UIScrollView+Refresh.m in Sources */,
 				38C11E7A1C8E662500FA0235 /* TRCategoriesViewModel.m in Sources */,
 				38BABC3D1C8E9B7600CE45C9 /* TRCategoryCell.m in Sources */,
@@ -717,11 +741,34 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = $PRODUCT_NAME/PrefixHeader.pch;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/Public/BlocksKit\"",
+					"\"${PODS_ROOT}/Headers/Public/CocoaAsyncSocket\"",
+					"\"${PODS_ROOT}/Headers/Public/CocoaLumberjack\"",
+					"\"${PODS_ROOT}/Headers/Public/DACircularProgress\"",
+					"\"${PODS_ROOT}/Headers/Public/FMDB\"",
+					"\"${PODS_ROOT}/Headers/Public/FlatUIKit\"",
+					"\"${PODS_ROOT}/Headers/Public/MBProgressHUD\"",
+					"\"${PODS_ROOT}/Headers/Public/MJExtension\"",
+					"\"${PODS_ROOT}/Headers/Public/MJRefresh\"",
+					"\"${PODS_ROOT}/Headers/Public/MLTransition\"",
+					"\"${PODS_ROOT}/Headers/Public/MWPhotoBrowser\"",
+					"\"${PODS_ROOT}/Headers/Public/Masonry\"",
+					"\"${PODS_ROOT}/Headers/Public/RESideMenu\"",
+					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
+					"\"${PODS_ROOT}/Headers/Public/TPKeyboardAvoiding\"",
+					"\"${PODS_ROOT}/Headers/Public/WMPageController\"",
+				);
 				INFOPLIST_FILE = TRProject/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tedu.GameLive2;
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tedu.GameLive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -732,11 +779,34 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = $PRODUCT_NAME/PrefixHeader.pch;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/Public/BlocksKit\"",
+					"\"${PODS_ROOT}/Headers/Public/CocoaAsyncSocket\"",
+					"\"${PODS_ROOT}/Headers/Public/CocoaLumberjack\"",
+					"\"${PODS_ROOT}/Headers/Public/DACircularProgress\"",
+					"\"${PODS_ROOT}/Headers/Public/FMDB\"",
+					"\"${PODS_ROOT}/Headers/Public/FlatUIKit\"",
+					"\"${PODS_ROOT}/Headers/Public/MBProgressHUD\"",
+					"\"${PODS_ROOT}/Headers/Public/MJExtension\"",
+					"\"${PODS_ROOT}/Headers/Public/MJRefresh\"",
+					"\"${PODS_ROOT}/Headers/Public/MLTransition\"",
+					"\"${PODS_ROOT}/Headers/Public/MWPhotoBrowser\"",
+					"\"${PODS_ROOT}/Headers/Public/Masonry\"",
+					"\"${PODS_ROOT}/Headers/Public/RESideMenu\"",
+					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
+					"\"${PODS_ROOT}/Headers/Public/TPKeyboardAvoiding\"",
+					"\"${PODS_ROOT}/Headers/Public/WMPageController\"",
+				);
 				INFOPLIST_FILE = TRProject/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tedu.GameLive2;
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tedu.GameLive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

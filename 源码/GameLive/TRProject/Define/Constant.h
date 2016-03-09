@@ -27,4 +27,7 @@ __block __weak __typeof(&*self)weakSelf = self;\
 
 #define kBGColor kRGBA(234,234,234,1)
 
+/** 全局的粉色 */
+#define kNaviBarBGColor     kRGBA(251, 51, 41, 1)
+
 #endif /* Constant_h */

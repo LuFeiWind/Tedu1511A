@@ -34,13 +34,13 @@ const void *netStatusKey = &netStatusKey;
     //为了让电池条呈现白色
     [UINavigationBar appearance].barStyle = UIBarStyleBlack;
     [UINavigationBar appearance].translucent = NO;
-    [UINavigationBar appearance].barTintColor = kRGBA(251, 51, 41, 1);
+    [UINavigationBar appearance].barTintColor = kNaviBarBGColor;
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:20]}];
     
     
     [UITabBar appearance].translucent = NO;
     [UITabBar appearance].barTintColor = kRGBA(237, 236, 235, 1.0);
-    self.window.tintColor = kRGBA(251, 51, 41, 1);
+    self.window.tintColor = kNaviBarBGColor;
     
 }
 

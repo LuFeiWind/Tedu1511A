@@ -69,7 +69,7 @@
 
 @property (nonatomic, assign) NSInteger level;
 
-@property (nonatomic, assign) NSInteger uid;
+@property (nonatomic, assign) NSString *uid;
 
 @property (nonatomic, copy) NSString *grade;
 
