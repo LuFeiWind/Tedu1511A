@@ -11,6 +11,7 @@
 #import "TRIntroViewModel.h"
 #import "iCarousel.h"
 #import "TRCategoryCell.h"
+#import "TRIntroSectionHeaderView.h"
 
 #define kCellSpace          8
 #define kCellNumPerLine     2
@@ -173,6 +174,22 @@
     }
 }
 
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
+    if (section == 0) {
+        return CGSizeZero;
+    }
+    return CGSizeMake(kScreenW, 35);
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
+    TRIntroSectionHeaderView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"TRIntroSectionHeaderView" forIndexPath:indexPath];
+    headerView.titleLb.text = @"精彩推荐";
+    if (indexPath.section == 1) {
+        headerView.btnMode = IntroBtnModeChange;
+    }
+    return headerView;
+}
+
 #pragma mark - Life Circle
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
@@ -201,6 +218,7 @@
         _collectionView.dataSource = self;
         [_collectionView registerClass:[TRIntroIndexCell class] forCellWithReuseIdentifier:@"TRIntroIndexCell"];
         [_collectionView registerClass:[TRCategoryCell class] forCellWithReuseIdentifier:@"TRCategoryCell"];
+        [_collectionView registerClass:[TRIntroSectionHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"TRIntroSectionHeaderView"];
         WK(weakSelf);
         [_collectionView addHeaderRefresh:^{
             [weakSelf.introVM getDataWithRequestMode:RequestModeRefresh completionHandler:^(NSError *error) {
