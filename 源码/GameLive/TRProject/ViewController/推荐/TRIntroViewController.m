@@ -83,6 +83,7 @@
 - (void)carousel:(iCarousel *)carousel didSelectItemAtIndex:(NSInteger)index{
     if (carousel.tag == kIntroIndexCellADICTag) {
         [Factory playVideo:[self.introVM indexURLForIndex:index]];
+    }else{
     }
 }
 

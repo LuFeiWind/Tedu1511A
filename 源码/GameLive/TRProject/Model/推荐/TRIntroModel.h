@@ -35,65 +35,42 @@
 
 @interface TRIntroLinkModel : TRBaseModel
 
-@property (nonatomic, copy) NSString *defaultImage;
-
-@property (nonatomic, copy) NSString *slug;
-
-@property (nonatomic, assign) NSInteger weight;
-
-@property (nonatomic, copy) NSString *lastPlayAt;
-
-@property (nonatomic, copy) NSString *title;
-
-@property (nonatomic, assign) NSInteger status;
-
-@property (nonatomic, copy) NSString *categoryName;
-
-@property (nonatomic, assign) NSInteger charm;
-
-@property (nonatomic, assign) NSInteger playCount;
-
-@property (nonatomic, copy) NSString *intro;
-
-@property (nonatomic, copy) NSString *categorySlug;
-
-@property (nonatomic, copy) NSString *lastEndAt;
-
-@property (nonatomic, copy) NSString *lastThumb;
-
-@property (nonatomic, assign) NSInteger check;
-
-@property (nonatomic, copy) NSString *recommendImage;
-
-@property (nonatomic, copy) NSString *appAhufflingImage;
-
-@property (nonatomic, assign) NSInteger level;
-
-@property (nonatomic, assign) NSString *uid;
-
-@property (nonatomic, copy) NSString *grade;
-
-@property (nonatomic, copy) NSString *nick;
-
-@property (nonatomic, assign) NSInteger coin;
-
-@property (nonatomic, copy) NSString *avatar;
-
-@property (nonatomic, copy) NSString *createAt;
-
-@property (nonatomic, assign) NSInteger view;
-
-@property (nonatomic, copy) NSString *videoQuality;
-
-@property (nonatomic, assign) NSInteger lockedView;
-
-@property (nonatomic, assign) NSInteger categoryId;
-
-@property (nonatomic, assign) NSInteger negativeView;
-
-@property (nonatomic, assign) NSInteger follow;
-
-@property (nonatomic, copy) NSString *firstPlayAt;
+@property (nonatomic, strong) NSString *nick;
+@property (nonatomic, strong) NSString *weightAdd;
+@property (nonatomic, strong) NSString *uid;
+@property (nonatomic, strong) NSString *level;
+@property (nonatomic, strong) NSString *followAdd;
+@property (nonatomic, strong) NSString *slug;
+@property (nonatomic, strong) NSString *lastPlayAt;
+@property (nonatomic, strong) NSString *check;
+@property (nonatomic, strong) NSString *thumb;
+@property (nonatomic, strong) NSString *playCount;
+@property (nonatomic, strong) NSString *negativeView;
+@property (nonatomic, strong) NSString *view;
+@property (nonatomic, strong) NSString *grade;
+@property (nonatomic, strong) NSString *lastThumb;
+@property (nonatomic, strong) NSString *coin;
+@property (nonatomic, strong) NSString *coinAdd;
+@property (nonatomic, strong) NSString *defaultImage;
+@property (nonatomic, strong) NSString *intro;
+@property (nonatomic, strong) NSString *categoryName;
+@property (nonatomic, strong) NSString *createAt;
+@property (nonatomic, assign) double charm;
+@property (nonatomic, strong) NSString *status;
+@property (nonatomic, strong) NSString *avatar;
+@property (nonatomic, strong) NSString *recommendImage;
+@property (nonatomic, strong) NSString *lockedView;
+@property (nonatomic, strong) NSString *lastEndAt;
+@property (nonatomic, strong) NSString *videoQuality;
+@property (nonatomic, strong) NSString *firstPlayAt;
+@property (nonatomic, strong) NSString *follow;
+@property (nonatomic, strong) NSString *followBak;
+@property (nonatomic, strong) NSString *playAt;
+@property (nonatomic, strong) NSString *weight;
+@property (nonatomic, strong) NSString *categoryId;
+@property (nonatomic, strong) NSString *title;
+@property (nonatomic, strong) NSString *categorySlug;
+@property (nonatomic, strong) NSString *appShufflingImage;
 
 @end
 
