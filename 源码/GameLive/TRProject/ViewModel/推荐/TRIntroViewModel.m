@@ -95,7 +95,7 @@
         if (self.recommentList.count - 1 >= _recommendStartIndex) {
             return self.recommentList[_recommendStartIndex++];
         }else{
-            _recommendStartIndex = 0;
+            _recommendStartIndex = 1;
             return self.recommentList.firstObject;
         }
     }
@@ -116,7 +116,11 @@
     return [self recommendModelForRow:row].linkObject.nick;
 }
 - (NSString *)recommendViewForRow:(NSInteger)row{
-    return [self recommendModelForRow:row].linkObject.view;
+    NSString *views = [self recommendModelForRow:row].linkObject.view;
+    if (views.doubleValue >= 10000) {
+        views = [NSString stringWithFormat:@"%.2f万", views.doubleValue/10000.0];
+    }
+    return views;
 }
 - (NSURL *)recommendVideoURLForRow:(NSInteger)row{
     NSString *path = [NSString stringWithFormat:kVideoPath, [self recommendModelForRow:row].linkObject.uid];

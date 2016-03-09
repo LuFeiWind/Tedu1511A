@@ -10,6 +10,10 @@
 #import "TRIntroIndexCell.h"
 #import "TRIntroViewModel.h"
 #import "iCarousel.h"
+#import "TRCategoryCell.h"
+
+#define kCellSpace          8
+#define kCellNumPerLine     2
 
 @interface TRIntroViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, iCarouselDelegate, iCarouselDataSource>
 @property (nonatomic) UICollectionView *collectionView;
@@ -98,10 +102,16 @@
 
 #pragma mark - UICollectionView delegate
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
-    return 1;
+    return 2;
 }
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 1;
+    if (section == 0) {
+        return 1;
+    }
+    if (section == 1) {
+        return 2;
+    }
+    return 2;
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
@@ -114,21 +124,53 @@
         [cell.ic1 reloadData];
         return cell;
     }
+    if (indexPath.section == 1) {
+        TRCategoryCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"TRCategoryCell" forIndexPath:indexPath];
+        NSInteger row = indexPath.row;
+        cell.titleLb.text = [self.introVM recommendTitleForRow:row];
+        cell.viewLb.text = [self.introVM recommendViewForRow:row];
+        cell.nickLb.text = [self.introVM recommendNickForRow:row];
+        [cell.iconIV setImageWithURL:[self.introVM recommendIconURLForRow:row] placeholderImage:[UIImage imageNamed:@"分类"]];
+        return cell;
+    }
     return nil;
 }
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
+    if (section != 0) {
+        return UIEdgeInsetsMake(kCellSpace, kCellSpace, kCellSpace, kCellSpace);
+    }
     return UIEdgeInsetsZero;
 }
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     //0  748  416
-    return CGSizeMake(kScreenW, kScreenW * 416/ 748 + 110);
+    if (indexPath.section == 0){
+        return CGSizeMake(kScreenW, kScreenW * 416/ 748 + 110);
+    }else{
+        CGFloat width = (kScreenW - (kCellNumPerLine + 1) * kCellSpace)/kCellNumPerLine;
+        //        350 * 266
+        CGFloat height = 266 * width / 350;
+        return CGSizeMake(width, height);
+    }
+    return CGSizeZero;
 }
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section{
-    return 1;
+    if (section  != 0) {
+        return kCellSpace;
+    }
+    return 0;
 }
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
+    if (section  != 0) {
+        return kCellSpace;
+    }
     return 0;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == 1) {
+        [Factory playVideo:[self.introVM recommendVideoURLForRow:indexPath.row]];
+    }
 }
 
 #pragma mark - Life Circle
@@ -158,6 +200,7 @@
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
         [_collectionView registerClass:[TRIntroIndexCell class] forCellWithReuseIdentifier:@"TRIntroIndexCell"];
+        [_collectionView registerClass:[TRCategoryCell class] forCellWithReuseIdentifier:@"TRCategoryCell"];
         WK(weakSelf);
         [_collectionView addHeaderRefresh:^{
             [weakSelf.introVM getDataWithRequestMode:RequestModeRefresh completionHandler:^(NSError *error) {
