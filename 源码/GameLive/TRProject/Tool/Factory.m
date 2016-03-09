@@ -24,14 +24,14 @@
 
 + (void)addBackItemToVC:(UIViewController *)vc{
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeSystem];
-    btn.frame = CGRectMake(0, 0, 50, 25);
-    [btn setTitle:@"返回" forState:UIControlStateNormal];
+    btn.frame = CGRectMake(0, 0, 50, 44);
+    [btn setImage:[UIImage imageNamed:@"返回_默认"] forState:UIControlStateNormal];
+    [btn setImage:[UIImage imageNamed:@"返回_按下"] forState:UIControlStateHighlighted];
+    
     [btn bk_addEventHandler:^(id sender) {
         [vc.navigationController popViewControllerAnimated:YES];
     } forControlEvents:UIControlEventTouchUpInside];
-    btn.backgroundColor = [UIColor lightGrayColor];
     //把视图的边角变为圆形, cornerRadius圆角半径
-    btn.layer.cornerRadius = 4;
     UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
     //弹簧控件, 修复边距
     UIBarButtonItem *spaceItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
