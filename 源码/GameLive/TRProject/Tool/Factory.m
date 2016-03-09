@@ -38,4 +38,12 @@
     spaceItem.width = -15;
     vc.navigationItem.leftBarButtonItems = @[spaceItem,backItem];
 }
+
++ (void)playVideo:(NSURL *)videoURL{
+    TRPlayerViewController *vc = [TRPlayerViewController new];
+    AVPlayerItem *playItem = [AVPlayerItem playerItemWithURL:videoURL];
+    vc.player = [AVPlayer playerWithPlayerItem:playItem];
+    [vc.player play];
+    [kAppdelegate.window.rootViewController presentViewController:vc animated:YES completion:nil];
+}
 @end

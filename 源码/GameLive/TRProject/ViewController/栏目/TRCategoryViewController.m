@@ -37,11 +37,7 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    AVPlayerViewController *vc = [AVPlayerViewController new];
-    AVPlayer *player = [AVPlayer playerWithURL:[self.categoryVM videoURLForRow:indexPath.row]];
-    vc.player = player;
-    [vc.player play];
-    [self presentViewController:vc animated:YES completion:nil];
+    [Factory playVideo:[self.categoryVM videoURLForRow:indexPath.row]];
 }
 
 #pragma mark - Life Circle

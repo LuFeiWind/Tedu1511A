@@ -23,15 +23,14 @@
 }
 
 @end
+
 @implementation TRADListPlayerGuanggaoModel
 
 @end
 
-
 @implementation TRADListPcBannerModel
 
 @end
-
 
 @implementation TRADListListModel
 

@@ -7,8 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TRPlayerViewController.h"
 
 @interface Factory : NSObject
 + (void)addBackItemToVC:(UIViewController *)vc;
 + (NSString *)md5:(NSString *)str;
+
++ (void)playVideo:(NSURL *)videoURL;
 @end

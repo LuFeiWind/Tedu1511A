@@ -47,6 +47,7 @@
 		38C11E7A1C8E662500FA0235 /* TRCategoriesViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C11E771C8E662500FA0235 /* TRCategoriesViewModel.m */; };
 		38C11E7B1C8E662500FA0235 /* TRCategoryViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C11E791C8E662500FA0235 /* TRCategoryViewModel.m */; };
 		38C11E7E1C8E665B00FA0235 /* TRCategoriesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C11E7D1C8E665B00FA0235 /* TRCategoriesCell.m */; };
+		38EC7C621C8FF40B005D0131 /* TRPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38EC7C611C8FF40B005D0131 /* TRPlayerViewController.m */; };
 		7BADFFA4FF0A3162B67E0831 /* libPods-TRProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8759E2D9A62BE10618FCC99C /* libPods-TRProject.a */; };
 /* End PBXBuildFile section */
 
@@ -133,6 +134,8 @@
 		38C11E791C8E662500FA0235 /* TRCategoryViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRCategoryViewModel.m; sourceTree = "<group>"; };
 		38C11E7C1C8E665B00FA0235 /* TRCategoriesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRCategoriesCell.h; sourceTree = "<group>"; };
 		38C11E7D1C8E665B00FA0235 /* TRCategoriesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRCategoriesCell.m; sourceTree = "<group>"; };
+		38EC7C601C8FF40B005D0131 /* TRPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRPlayerViewController.h; sourceTree = "<group>"; };
+		38EC7C611C8FF40B005D0131 /* TRPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRPlayerViewController.m; sourceTree = "<group>"; };
 		70276005029EE88E7F2474B9 /* Pods-TRProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TRProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-TRProject/Pods-TRProject.release.xcconfig"; sourceTree = "<group>"; };
 		7BA1DBF911CCDD099DBC3032 /* Pods-TRProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TRProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TRProject/Pods-TRProject.debug.xcconfig"; sourceTree = "<group>"; };
 		8759E2D9A62BE10618FCC99C /* libPods-TRProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TRProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -429,6 +432,8 @@
 		38C11E691C8D7AB300FA0235 /* 其他 */ = {
 			isa = PBXGroup;
 			children = (
+				38EC7C601C8FF40B005D0131 /* TRPlayerViewController.h */,
+				38EC7C611C8FF40B005D0131 /* TRPlayerViewController.m */,
 			);
 			path = "其他";
 			sourceTree = "<group>";
@@ -643,6 +648,7 @@
 				38A1A3481C745317007EEEB7 /* UIScrollView+Refresh.m in Sources */,
 				38C11E7A1C8E662500FA0235 /* TRCategoriesViewModel.m in Sources */,
 				38BABC3D1C8E9B7600CE45C9 /* TRCategoryCell.m in Sources */,
+				38EC7C621C8FF40B005D0131 /* TRPlayerViewController.m in Sources */,
 				38236D081C8D18EC00BA928D /* TRBaseViewController.m in Sources */,
 				385DB40C1C8E77BA00790B80 /* TRIntroViewController.m in Sources */,
 				382C11831C7E8CDD00F34BB0 /* AppDelegate+System.m in Sources */,
