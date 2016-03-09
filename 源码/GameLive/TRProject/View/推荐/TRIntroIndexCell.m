@@ -43,7 +43,8 @@
     if(_ic1 == nil) {
         _ic1 = [[iCarousel alloc] init];
         _ic1.tag = kIntroIndexCellHeaderICTag;
-        [self.contentView addSubview:self.ic1];
+        [self.contentView addSubview:_ic1];
+        _ic1.autoscroll = YES;
     }
     return _ic1;
 }

@@ -21,7 +21,7 @@
     if (carousel.tag == kIntroIndexCellADICTag) {
         return self.introVM.indexNumber;
     }
-    return 0;
+    return self.introVM.starNumber;
 }
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(nullable UIView *)view{
     if (carousel.tag == kIntroIndexCellADICTag) {
@@ -39,16 +39,51 @@
         UIImageView *iconIV = (UIImageView *)[view viewWithTag:10000];
         [iconIV setImageWithURL:[self.introVM indexIconURLForIndex:index] placeholderImage:[UIImage imageNamed:@"分类"]];
         return view;
+    }else{
+        if (!view) {
+            view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 80, carousel.bounds.size.height)];
+            view.clipsToBounds = YES;
+            UILabel *nameLb = [UILabel new];
+            [view addSubview:nameLb];
+            [nameLb mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.centerX.equalTo(0);
+                make.bottom.equalTo(-6);
+            }];
+            nameLb.tag = 100;
+            UIImageView *iconIV = [[UIImageView alloc] init];
+            [view addSubview:iconIV];
+            [iconIV mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.centerX.equalTo(0);
+                make.top.equalTo(10);
+                make.size.equalTo(CGSizeMake(56, 56));
+            }];
+            iconIV.clipsToBounds = YES;
+            iconIV.layer.cornerRadius = 28;
+            iconIV.tag = 200;
+        }
+        
+        UILabel *nameLb = (UILabel *)[view viewWithTag:100];
+        nameLb.text = [self.introVM starNameForIndex:index];
+        UIImageView *iconIV = (UIImageView *)[view viewWithTag:200];
+        [iconIV setImageWithURL:[self.introVM starIconURLForIndex:index] placeholderImage:[UIImage imageNamed:@"分类"]];
+        
+        return view;
     }
     return nil;
 }
 - (CGFloat)carousel:(iCarousel *)carousel valueForOption:(iCarouselOption)option withDefault:(CGFloat)value{
-    if (carousel.tag == kIntroIndexCellADICTag) {
-        if (option == iCarouselOptionWrap) {
-            return YES;
-        }
+    //    if (carousel.tag == kIntroIndexCellADICTag) {
+    if (option == iCarouselOptionWrap) {
+        return YES;
     }
+    //    }
     return value;
+}
+
+- (void)carousel:(iCarousel *)carousel didSelectItemAtIndex:(NSInteger)index{
+    if (carousel.tag == kIntroIndexCellADICTag) {
+        [Factory playVideo:[self.introVM indexURLForIndex:index]];
+    }
 }
 
 - (void)carouselCurrentItemIndexDidChange:(iCarousel *)carousel{

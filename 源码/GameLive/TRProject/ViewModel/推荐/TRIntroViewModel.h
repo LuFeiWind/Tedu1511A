@@ -17,7 +17,17 @@
 - (TRIntroMobileModel *)indexModelForIndex:(NSInteger)index;
 - (NSURL *)indexIconURLForIndex:(NSInteger)index;
 - (NSString *)indexTitleForIndex:(NSInteger)index;
-- (NSString *)indexUidForIndex:(NSInteger)index;
+- (NSURL *)indexURLForIndex:(NSInteger)index;
 /* 头部滚动广告部分--End */
+
+/* 推荐部分--Begin */
+@property (nonatomic) NSArray *starList;
+@property (nonatomic) NSInteger starNumber;
+- (NSString *)starNameForIndex:(NSInteger)index;
+- (NSURL *)starIconURLForIndex:(NSInteger)index;
+- (TRIntroMobileModel *)starModelForIndex:(NSInteger)index;
+- (NSURL *)starVideoURLForIndex:(NSInteger)index;
+
+/* 推荐部分--End */
 
 @end
