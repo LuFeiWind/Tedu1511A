@@ -187,6 +187,9 @@
     if (indexPath.section == 1) {
         headerView.btnMode = IntroBtnModeChange;
     }
+    if (indexPath.section > 1) {
+        headerView.btnMode = IntroBtnModeMore;
+    }
     headerView.indexPath = indexPath;
     return headerView;
 }

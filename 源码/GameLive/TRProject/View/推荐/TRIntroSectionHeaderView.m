@@ -25,34 +25,93 @@
             make.centerY.equalTo(lineView);
         }];
         
-        UIControl *rightC = [self changeControl];
-        [self addSubview:rightC];
-        [rightC mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.right.equalTo(-8);
+        [self addSubview:self.changeControl];
+        [self.changeControl mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.right.equalTo(-15);
             make.bottom.equalTo(0);
-            make.size.equalTo(CGSizeMake(100, 20));
+            make.size.equalTo(CGSizeMake(60, 20));
+        }];
+        [self addSubview:self.moreControl];
+        [self.moreControl mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.right.equalTo(-15);
+            make.bottom.equalTo(0);
+            make.size.equalTo(CGSizeMake(60, 20));
         }];
     }
     return self;
 }
 
+- (void)setBtnMode:(IntroBtnMode)btnMode{
+    _btnMode = btnMode;
+    self.moreControl.hidden = YES;
+    self.changeControl.hidden = YES;
+    switch (btnMode) {
+        case IntroBtnModeChange: {
+            self.changeControl.hidden = NO;
+            break;
+        }
+        case IntroBtnModeMore: {
+            self.changeControl.hidden = NO;
+            break;
+        }
+    }
+}
+
 - (UIControl *)moreControl{
-    return nil;
+    if (!_moreControl) {
+        _moreControl = [UIControl new];
+        [_moreControl bk_addEventHandler:^(id sender) {
+            if ([_delegate respondsToSelector:@selector(introSectionHeaderView:clickBtnAtIndexPath:)]) {
+                [_delegate introSectionHeaderView:self clickBtnAtIndexPath:_indexPath];
+            }
+        } forControlEvents:UIControlEventTouchUpInside];
+        
+        UILabel *lb = [UILabel new];
+        lb.text = @"更多";
+        lb.font = [UIFont systemFontOfSize:13];
+        [_moreControl addSubview:lb];
+        [lb mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerY.equalTo(0);
+            make.right.equalTo(-3);
+        }];
+        
+        UIImageView *icon = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"更多"]];
+        [_moreControl addSubview:icon];
+        [icon mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerY.equalTo(0);
+            make.right.equalTo(lb.mas_left).equalTo(-3);
+        }];
+    }
+    return _moreControl;
 }
 
 - (UIControl *)changeControl{
-    UIControl *rightC = [UIControl new];
-    [rightC bk_addEventHandler:^(id sender) {
-        if ([_delegate respondsToSelector:@selector(introSectionHeaderView:clickBtnAtIndexPath:)]) {
-            [_delegate introSectionHeaderView:self clickBtnAtIndexPath:_indexPath];
-        }
-    } forControlEvents:UIControlEventTouchUpInside];
-    
-    rightC.backgroundColor = [UIColor greenColor];
-    
-    
-    
-    return rightC;
+    if (!_changeControl) {
+        _changeControl = [UIControl new];
+        [_changeControl bk_addEventHandler:^(id sender) {
+            if ([_delegate respondsToSelector:@selector(introSectionHeaderView:clickBtnAtIndexPath:)]) {
+                [_delegate introSectionHeaderView:self clickBtnAtIndexPath:_indexPath];
+            }
+        } forControlEvents:UIControlEventTouchUpInside];
+        
+        UILabel *lb = [UILabel new];
+        lb.text = @"换一换";
+        lb.font = [UIFont systemFontOfSize:13];
+        [_changeControl addSubview:lb];
+        [lb mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerY.equalTo(0);
+            make.right.equalTo(-3);
+        }];
+        
+        UIImageView *icon = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"换一换"]];
+        [_changeControl addSubview:icon];
+        [icon mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerY.equalTo(0);
+            make.right.equalTo(lb.mas_left).equalTo(-3);
+        }];
+        
+    }
+    return _changeControl;
 }
 
 
