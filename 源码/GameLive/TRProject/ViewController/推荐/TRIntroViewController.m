@@ -28,7 +28,6 @@
         [self.introVM changeCurrentRecommentList];
         [_collectionView reloadSections:[NSIndexSet indexSetWithIndex:1]];
     }
-    
 }
 
 #pragma mark - ICarousel delegate

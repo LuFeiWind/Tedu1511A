@@ -44,6 +44,25 @@
             self.indexList = model.mobileIndex;
             self.starList = model.mobileStar;
             self.recommentList = model.mobileRecommendation;
+            /*所有类型是TRIntroMobileLinkModel类型的, 样式一致
+             通过runtime获取属性, 查看属性数组中的元素是什么类型
+             */
+            unsigned int outCount = 0;
+            Ivar *varList = class_copyIvarList([model class], &outCount);
+            NSMutableArray *tmpList = [NSMutableArray new];
+            for (int i = 0; i < outCount; i++) {
+                Ivar ivar = varList[i];
+                const char *name = ivar_getName(ivar);
+                NSString *propertyName = [[NSString alloc] initWithUTF8String:name];
+                id obj = [model valueForKey:propertyName];
+                if ([obj isKindOfClass:[NSArray class]]) {
+                    id firstObj = [(NSArray *)obj firstObject];
+                    if ([firstObj isKindOfClass:[TRIntroMobileLinkModel class]]) {
+                        [tmpList addObject:obj];
+                    }
+                }
+            }
+            self.linkList = tmpList;
         }
         completionHandler(error);
     }];
@@ -124,6 +143,35 @@
 }
 - (NSURL *)recommendVideoURLForRow:(NSInteger)row{
     NSString *path = [NSString stringWithFormat:kVideoPath, [self recommendModelForRow:row].linkObject.uid];
+    return [NSURL URLWithString:path];
+}
+
+
+
+
+- (TRIntroLinkModel *)linkModelForRow:(NSIndexPath *)indexPath{
+    NSArray *tmpMobileLinks = self.linkList[indexPath.section];
+    TRIntroMobileLinkModel *mlModel = tmpMobileLinks[indexPath.row];
+    return mlModel.linkObject;
+}
+- (NSURL *)linkIconURLForRow:(NSIndexPath *)indexPath{
+    return [NSURL URLWithString:[self linkModelForRow:indexPath].thumb];
+}
+- (NSString *)linkTitleForRow:(NSIndexPath *)indexPath{
+    return [self linkModelForRow:indexPath].title;
+}
+- (NSString *)linkNickForRow:(NSIndexPath *)indexPath{
+    return [self linkModelForRow:indexPath].nick;
+}
+- (NSString *)linkViewForRow:(NSIndexPath *)indexPath{
+    NSString *views = [self linkModelForRow:indexPath].view;
+    if (views.doubleValue >= 10000) {
+        views = [NSString stringWithFormat:@"%.2f万", views.doubleValue/10000.0];
+    }
+    return views;
+}
+- (NSURL *)linkVideoURLForRow:(NSIndexPath *)indexPath{
+    NSString *path = [NSString stringWithFormat:kVideoPath, [self linkModelForRow:indexPath].uid];
     return [NSURL URLWithString:path];
 }
 

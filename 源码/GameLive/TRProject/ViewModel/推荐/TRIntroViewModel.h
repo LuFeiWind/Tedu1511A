@@ -42,11 +42,33 @@
 - (NSString *)recommendNickForRow:(NSInteger)row;
 - (NSString *)recommendViewForRow:(NSInteger)row;
 - (NSURL *)recommendVideoURLForRow:(NSInteger)row;
-
 /* 推荐部分--End*/
 
 
 /* 其他游戏直播--Begin */
+- (TRIntroLinkModel *)linkModelForRow:(NSIndexPath *)indexPath;
+@property (nonatomic) NSInteger linkNumber;
+@property (nonatomic) NSArray *linkList;
+- (NSURL *)linkIconURLForRow:(NSIndexPath *)indexPath;
+- (NSString *)linkTitleForRow:(NSIndexPath *)indexPath;
+- (NSString *)linkNickForRow:(NSIndexPath *)indexPath;
+- (NSString *)linkViewForRow:(NSIndexPath *)indexPath;
+- (NSURL *)linkVideoURLForRow:(NSIndexPath *)indexPath;
 
 /* 其他游戏直播--End */
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
