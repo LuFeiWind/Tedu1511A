@@ -14,9 +14,17 @@
     return self.items.count;
 }
 
+- (NSMutableArray<TRSearchDataItemsModel *> *)items{
+    if (!_items) {
+        _items = [NSMutableArray new];
+    }
+    return _items;
+}
+
 - (TRSearchDataItemsModel *)modelForRow:(NSInteger)row{
     return self.items[row];
 }
+
 - (NSURL *)iconURLForRow:(NSInteger)row{
     return [NSURL URLWithString:[self modelForRow:row].thumb];
 }
@@ -56,7 +64,13 @@
     }
     self.dataTask = [TRLiveNetManager search:_words page:tmpPage completionHandler:^(TRSearchModel *model, NSError *error) {
         if (!error) {
-            
+            if (requestMode == RequestModeRefresh) {
+                [self.items removeAllObjects];
+            }
+            self.total = model.data.total;
+            self.page = tmpPage;
+            [self.items addObjectsFromArray:model.data.items];
+            self.hasMore = _items.count >= self.total;
         }
         completionHandler(error);
     }];

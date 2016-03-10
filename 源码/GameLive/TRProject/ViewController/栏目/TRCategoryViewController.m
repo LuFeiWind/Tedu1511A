@@ -10,9 +10,6 @@
 #import "TRCategoryViewModel.h"
 #import "TRCategoryCell.h"
 
-@import AVFoundation;
-@import AVKit;
-
 #define kCellSpace          8
 #define kCellNumPerLine     2
 
