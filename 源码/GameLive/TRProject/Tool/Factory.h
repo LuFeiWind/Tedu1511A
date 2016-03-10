@@ -14,4 +14,7 @@
 + (NSString *)md5:(NSString *)str;
 
 + (void)playVideo:(NSURL *)videoURL;
+
+/** 右上角添加搜索按钮 */
++ (void)addSearchItemToVC:(UIViewController *)vc clickHandler:(void(^)())clickHandler;
 @end

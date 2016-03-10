@@ -13,5 +13,13 @@
 @property (nonatomic) NSString *words;
 @property (nonatomic) NSArray<TRSearchDataItemsModel *> *items;
 
+@property (nonatomic) NSInteger rowNumber;
+- (TRSearchDataItemsModel *)modelForRow:(NSInteger)row;
+@property (nonatomic) NSInteger page;
+- (NSURL *)iconURLForRow:(NSInteger)row;
+- (NSString *)titleForRow:(NSInteger)row;
+- (NSString *)nickForRow:(NSInteger)row;
+- (NSString *)viewForRow:(NSInteger)row;
+- (NSURL *)videoURLForRow:(NSInteger)row;
 
 @end

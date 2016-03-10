@@ -10,6 +10,7 @@
 #import "TRCategoriesViewModel.h"
 #import "TRCategoriesCell.h"
 #import "TRCategoryViewController.h"
+#import "TRSearchViewController.h"
 
 #define kCellSpace          8
 #define kCellNumPerLine     3
@@ -53,6 +54,10 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = kBGColor;
     [self.collectionView beginHeaderRefresh];
+    [Factory addSearchItemToVC:self clickHandler:^{
+        TRSearchViewController *vc = [TRSearchViewController new];
+        [self.navigationController pushViewController:vc animated:YES];
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

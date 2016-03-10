@@ -23,7 +23,7 @@
 }
 
 + (void)addBackItemToVC:(UIViewController *)vc{
-    UIButton *btn = [UIButton buttonWithType:UIButtonTypeSystem];
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     btn.frame = CGRectMake(0, 0, 50, 44);
     [btn setImage:[UIImage imageNamed:@"返回_默认"] forState:UIControlStateNormal];
     [btn setImage:[UIImage imageNamed:@"返回_按下"] forState:UIControlStateHighlighted];
@@ -46,4 +46,36 @@
     [vc.player play];
     [kAppdelegate.window.rootViewController presentViewController:vc animated:YES completion:nil];
 }
+
++ (void)addSearchItemToVC:(UIViewController *)vc clickHandler:(void(^)())clickHandler{
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.frame = CGRectMake(0, 0, 50, 44);
+    [btn setImage:[UIImage imageNamed:@"搜索_默认"] forState:UIControlStateNormal];
+    [btn setImage:[UIImage imageNamed:@"搜索_按下"] forState:UIControlStateHighlighted];
+    
+    [btn bk_addEventHandler:^(id sender) {
+        clickHandler();
+    } forControlEvents:UIControlEventTouchUpInside];
+    //把视图的边角变为圆形, cornerRadius圆角半径
+    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
+    //弹簧控件, 修复边距
+    UIBarButtonItem *spaceItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    spaceItem.width = -15;
+    vc.navigationItem.rightBarButtonItems = @[spaceItem,backItem];
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @end

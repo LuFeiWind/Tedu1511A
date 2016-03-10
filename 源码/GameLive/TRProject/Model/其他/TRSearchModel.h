@@ -17,7 +17,7 @@
 @end
 @interface TRSearchDataModel : TRBaseModel
 
-@property (nonatomic, assign) NSInteger play_status;
+@property (nonatomic, assign) NSInteger playStatus;
 
 @property (nonatomic, assign) NSInteger pageNb;
 
@@ -29,17 +29,17 @@
 
 @interface TRSearchDataItemsModel : TRBaseModel
 
-@property (nonatomic, copy) NSString *category_slug;
+@property (nonatomic, copy) NSString *categorySlug;
 
-@property (nonatomic, assign) NSInteger uid;
+@property (nonatomic, assign) NSString *uid;
 
 @property (nonatomic, copy) NSString *nick;
 
-@property (nonatomic, assign) NSInteger category_id;
+@property (nonatomic, assign) NSInteger categoryId;
 
 @property (nonatomic, copy) NSString *title;
 
-@property (nonatomic, copy) NSString *category_name;
+@property (nonatomic, copy) NSString *categoryName;
 
 @property (nonatomic, copy) NSString *thumb;
 

@@ -13,6 +13,7 @@
 #import "TRCategoryCell.h"
 #import "TRIntroSectionHeaderView.h"
 #import "TRCategoryViewController.h"
+#import "TRSearchViewController.h"
 
 #define kCellSpace          8
 #define kCellNumPerLine     2
@@ -244,6 +245,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self.collectionView beginHeaderRefresh];
+    [Factory addSearchItemToVC:self clickHandler:^{
+        TRSearchViewController *vc = [TRSearchViewController new];
+        [self.navigationController pushViewController:vc animated:YES];
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
