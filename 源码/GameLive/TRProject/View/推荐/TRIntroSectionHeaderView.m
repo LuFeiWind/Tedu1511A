@@ -51,10 +51,15 @@
             break;
         }
         case IntroBtnModeMore: {
-            self.changeControl.hidden = NO;
+            self.moreControl.hidden = NO;
             break;
         }
     }
+}
+
+- (void)prepareForReuse{
+    [super prepareForReuse];
+    [self setBtnMode:_btnMode];
 }
 
 - (UIControl *)moreControl{

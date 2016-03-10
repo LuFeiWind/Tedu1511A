@@ -12,6 +12,7 @@
 #import "iCarousel.h"
 #import "TRCategoryCell.h"
 #import "TRIntroSectionHeaderView.h"
+#import "TRCategoryViewController.h"
 
 #define kCellSpace          8
 #define kCellNumPerLine     2
@@ -24,9 +25,18 @@
 @implementation TRIntroViewController
 #pragma mark - TRIntroSectionHeaderView delegate
 - (void)introSectionHeaderView:(TRIntroSectionHeaderView *)headerView clickBtnAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.section == 1) {
-        [self.introVM changeCurrentRecommentList];
-        [_collectionView reloadSections:[NSIndexSet indexSetWithIndex:1]];
+    switch (headerView.btnMode) {
+        case IntroBtnModeChange: {
+            [self.introVM changeCurrentRecommentList];
+            [_collectionView reloadSections:[NSIndexSet indexSetWithIndex:1]];
+            break;
+        }
+        case IntroBtnModeMore: {
+            NSIndexPath *tmpIndexPath = [NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section - 2];
+            TRCategoryViewController *vc = [[TRCategoryViewController alloc] initWithSlug:[self.introVM linkSlugForIndexPath:tmpIndexPath] categoryName:[self.introVM linkCategoryNameForIndexPath:tmpIndexPath]];
+            [self.navigationController pushViewController:vc animated:YES];
+            break;
+        }
     }
 }
 
@@ -112,7 +122,7 @@
 
 #pragma mark - UICollectionView delegate
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
-    return 2;
+    return 2 + self.introVM.linkNumber;
 }
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     if (section == 0) {
@@ -121,7 +131,7 @@
     if (section == 1) {
         return 2;
     }
-    return 2;
+    return [self.introVM linkNumberForSection:section-2];
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
@@ -133,8 +143,7 @@
         [cell.ic0 reloadData];
         [cell.ic1 reloadData];
         return cell;
-    }
-    if (indexPath.section == 1) {
+    }else if (indexPath.section == 1) {
         TRCategoryCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"TRCategoryCell" forIndexPath:indexPath];
         NSInteger row = indexPath.row;
         cell.titleLb.text = [self.introVM recommendTitleForRow:row];
@@ -142,8 +151,15 @@
         cell.nickLb.text = [self.introVM recommendNickForRow:row];
         [cell.iconIV setImageWithURL:[self.introVM recommendIconURLForRow:row] placeholderImage:[UIImage imageNamed:@"分类"]];
         return cell;
+    }else{
+        TRCategoryCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"TRCategoryCell" forIndexPath:indexPath];
+        NSIndexPath *tmpIndexPath = [NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section - 2];
+        cell.titleLb.text = [self.introVM linkTitleForIndexPath:tmpIndexPath];
+        cell.viewLb.text = [self.introVM linkViewForIndexPath:tmpIndexPath];
+        cell.nickLb.text = [self.introVM linkNickForIndexPath:tmpIndexPath];
+        [cell.iconIV setImageWithURL:[self.introVM linkIconURLForIndexPath:tmpIndexPath] placeholderImage:[UIImage imageNamed:@"分类"]];
+        return cell;
     }
-    return nil;
 }
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
@@ -181,6 +197,10 @@
     if (indexPath.section == 1) {
         [Factory playVideo:[self.introVM recommendVideoURLForRow:indexPath.row]];
     }
+    if (indexPath.section > 1) {
+        NSIndexPath *tmpIndexPath = [NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section - 2];
+        [Factory playVideo:[self.introVM linkVideoURLForIndexPath:tmpIndexPath]];
+    }
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
@@ -195,12 +215,15 @@
         return nil;
     }
     TRIntroSectionHeaderView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"TRIntroSectionHeaderView" forIndexPath:indexPath];
-    headerView.titleLb.text = @"精彩推荐";
+    
     if (indexPath.section == 1) {
         headerView.btnMode = IntroBtnModeChange;
+        headerView.titleLb.text = @"精彩推荐";
     }
     if (indexPath.section > 1) {
         headerView.btnMode = IntroBtnModeMore;
+        NSIndexPath *tmpIndexPath = [NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section - 2];
+        headerView.titleLb.text = [self.introVM linkCategoryNameForIndexPath:tmpIndexPath];
     }
     headerView.indexPath = indexPath;
     headerView.delegate = self;

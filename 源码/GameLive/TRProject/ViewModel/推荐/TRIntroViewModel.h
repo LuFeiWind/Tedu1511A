@@ -46,15 +46,17 @@
 
 
 /* 其他游戏直播--Begin */
-- (TRIntroLinkModel *)linkModelForRow:(NSIndexPath *)indexPath;
+- (TRIntroLinkModel *)linkModelForIndexPath:(NSIndexPath *)indexPath;
 @property (nonatomic) NSInteger linkNumber;
 @property (nonatomic) NSArray *linkList;
-- (NSURL *)linkIconURLForRow:(NSIndexPath *)indexPath;
-- (NSString *)linkTitleForRow:(NSIndexPath *)indexPath;
-- (NSString *)linkNickForRow:(NSIndexPath *)indexPath;
-- (NSString *)linkViewForRow:(NSIndexPath *)indexPath;
-- (NSURL *)linkVideoURLForRow:(NSIndexPath *)indexPath;
-
+- (NSInteger)linkNumberForSection:(NSInteger)section;
+- (NSURL *)linkIconURLForIndexPath:(NSIndexPath *)indexPath;
+- (NSString *)linkTitleForIndexPath:(NSIndexPath *)indexPath;
+- (NSString *)linkNickForIndexPath:(NSIndexPath *)indexPath;
+- (NSString *)linkViewForIndexPath:(NSIndexPath *)indexPath;
+- (NSURL *)linkVideoURLForIndexPath:(NSIndexPath *)indexPath;
+- (NSString *)linkCategoryNameForIndexPath:(NSIndexPath *)indexPath;
+- (NSString *)linkSlugForIndexPath:(NSIndexPath *)indexPath;
 /* 其他游戏直播--End */
 @end
 

@@ -149,32 +149,47 @@
 
 
 
-- (TRIntroLinkModel *)linkModelForRow:(NSIndexPath *)indexPath{
+- (TRIntroLinkModel *)linkModelForIndexPath:(NSIndexPath *)indexPath{
     NSArray *tmpMobileLinks = self.linkList[indexPath.section];
     TRIntroMobileLinkModel *mlModel = tmpMobileLinks[indexPath.row];
     return mlModel.linkObject;
 }
-- (NSURL *)linkIconURLForRow:(NSIndexPath *)indexPath{
-    return [NSURL URLWithString:[self linkModelForRow:indexPath].thumb];
+
+- (NSInteger)linkNumber{
+    return self.linkList.count;
 }
-- (NSString *)linkTitleForRow:(NSIndexPath *)indexPath{
-    return [self linkModelForRow:indexPath].title;
+
+- (NSInteger)linkNumberForSection:(NSInteger)section{
+    NSArray *tmpMobileLinks = self.linkList[section];
+    return tmpMobileLinks.count;
 }
-- (NSString *)linkNickForRow:(NSIndexPath *)indexPath{
-    return [self linkModelForRow:indexPath].nick;
+
+- (NSURL *)linkIconURLForIndexPath:(NSIndexPath *)indexPath{
+    return [NSURL URLWithString:[self linkModelForIndexPath:indexPath].thumb];
 }
-- (NSString *)linkViewForRow:(NSIndexPath *)indexPath{
-    NSString *views = [self linkModelForRow:indexPath].view;
+- (NSString *)linkTitleForIndexPath:(NSIndexPath *)indexPath{
+    return [self linkModelForIndexPath:indexPath].title;
+}
+- (NSString *)linkNickForIndexPath:(NSIndexPath *)indexPath{
+    return [self linkModelForIndexPath:indexPath].nick;
+}
+- (NSString *)linkViewForIndexPath:(NSIndexPath *)indexPath{
+    NSString *views = [self linkModelForIndexPath:indexPath].view;
     if (views.doubleValue >= 10000) {
         views = [NSString stringWithFormat:@"%.2f万", views.doubleValue/10000.0];
     }
     return views;
 }
-- (NSURL *)linkVideoURLForRow:(NSIndexPath *)indexPath{
-    NSString *path = [NSString stringWithFormat:kVideoPath, [self linkModelForRow:indexPath].uid];
+- (NSURL *)linkVideoURLForIndexPath:(NSIndexPath *)indexPath{
+    NSString *path = [NSString stringWithFormat:kVideoPath, [self linkModelForIndexPath:indexPath].uid];
     return [NSURL URLWithString:path];
 }
-
+- (NSString *)linkCategoryNameForIndexPath:(NSIndexPath *)indexPath{
+    return [self linkModelForIndexPath:indexPath].categoryName;
+}
+- (NSString *)linkSlugForIndexPath:(NSIndexPath *)indexPath{
+    return [self linkModelForIndexPath:indexPath].categorySlug;
+}
 @end
 
 

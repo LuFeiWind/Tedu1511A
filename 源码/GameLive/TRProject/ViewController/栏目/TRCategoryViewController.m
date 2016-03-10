@@ -46,6 +46,7 @@
         self.slug = slug;
         self.categoryName = categoryName;
         self.title = categoryName;
+        self.hidesBottomBarWhenPushed = YES;
     }
     return self;
 }
