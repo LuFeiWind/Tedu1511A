@@ -16,12 +16,22 @@
 #define kCellSpace          8
 #define kCellNumPerLine     2
 
-@interface TRIntroViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, iCarouselDelegate, iCarouselDataSource>
+@interface TRIntroViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, iCarouselDelegate, iCarouselDataSource, TRIntroSectionHeaderViewDelegate>
 @property (nonatomic) UICollectionView *collectionView;
 @property (nonatomic) TRIntroViewModel *introVM;
 @end
 
 @implementation TRIntroViewController
+#pragma mark - TRIntroSectionHeaderView delegate
+- (void)introSectionHeaderView:(TRIntroSectionHeaderView *)headerView clickBtnAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == 1) {
+        [self.introVM changeCurrentRecommentList];
+        [_collectionView reloadSections:[NSIndexSet indexSetWithIndex:1]];
+    }
+    
+}
+
+#pragma mark - ICarousel delegate
 - (NSInteger)numberOfItemsInCarousel:(iCarousel *)carousel{
     if (carousel.tag == kIntroIndexCellADICTag) {
         return self.introVM.indexNumber;
@@ -182,6 +192,9 @@
 }
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == 0) {
+        return nil;
+    }
     TRIntroSectionHeaderView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"TRIntroSectionHeaderView" forIndexPath:indexPath];
     headerView.titleLb.text = @"精彩推荐";
     if (indexPath.section == 1) {
@@ -191,6 +204,7 @@
         headerView.btnMode = IntroBtnModeMore;
     }
     headerView.indexPath = indexPath;
+    headerView.delegate = self;
     return headerView;
 }
 
