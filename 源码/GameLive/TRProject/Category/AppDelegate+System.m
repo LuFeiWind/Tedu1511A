@@ -63,15 +63,19 @@ const void *netStatusKey = &netStatusKey;
     return [AFNetworkReachabilityManager sharedManager].networkReachabilityStatus;
 }
 
+// App进入后台
+- (void)applicationDidEnterBackground:(UIApplication *)application
+{
+    [[EMClient sharedClient] applicationDidEnterBackground:application];
+}
+
+// App将要从后台返回
+- (void)applicationWillEnterForeground:(UIApplication *)application
+{
+    [[EMClient sharedClient] applicationWillEnterForeground:application];
+}
+
 - (void)applicationWillResignActive:(UIApplication *)application {
-    
-}
-
-- (void)applicationDidEnterBackground:(UIApplication *)application {
-    
-}
-
-- (void)applicationWillEnterForeground:(UIApplication *)application {
     
 }
 

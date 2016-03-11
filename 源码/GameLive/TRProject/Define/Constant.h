@@ -9,6 +9,9 @@
 #ifndef Constant_h
 #define Constant_h
 
+
+#define kEaseMobKey @"1660626091#trlive"
+
 //屏幕宽度
 #define kScreenW [UIScreen mainScreen].bounds.size.width
 //屏幕高度

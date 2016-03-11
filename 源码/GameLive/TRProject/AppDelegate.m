@@ -12,7 +12,7 @@
 #import "TRLiveListViewController.h"
 #import "TRIntroViewController.h"
 
-@interface AppDelegate ()
+@interface AppDelegate ()<EMClientDelegate>
 @end
 
 @implementation AppDelegate
@@ -22,9 +22,32 @@
     //全局默认配置
     [self setupGlobalConfig];
     self.window.rootViewController = self.tabC;
+    [[EaseSDKHelper shareHelper] easemobApplication:application
+                      didFinishLaunchingWithOptions:launchOptions
+                                             appkey:kEaseMobKey
+                                       apnsCertName:nil
+                                        otherConfig:@{kSDKConfigEnableConsoleLogger:[NSNumber numberWithBool:NO]}];
     return YES;
 }
 
+#pragma mark - EaseMob delegate
+- (void)didAutoLoginWithError:(EMError *)aError{
+    DDLogVerbose(@"didAutoLoginWithError %@", aError);
+}
+
+/*!
+ *  当前登录账号在其它设备登录时会接收到该回调
+ */
+- (void)didLoginFromOtherDevice{
+    DDLogVerbose(@"didLoginFromOtherDevice");
+}
+
+/*!
+ *  当前登录账号已经被从服务器端删除时会收到该回调
+ */
+- (void)didRemovedFromServer{
+    DDLogVerbose(@"didLoginFromOtherDevice");
+}
 
 #pragma mark - Lazy Load
 

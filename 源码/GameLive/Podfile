@@ -8,18 +8,18 @@ target 'TRProject' do
     
     pod 'AFNetworking'
     pod 'MJExtension'
-    pod 'MJRefresh'
+    #    pod 'MJRefresh'
     pod 'Masonry'
     pod 'BlocksKit'
     pod 'WMPageController'
     pod 'CocoaLumberjack'
-    pod 'MBProgressHUD'
+    #    pod 'MBProgressHUD'
     pod 'TPKeyboardAvoiding'
     pod 'MLTransition'
     pod 'FMDB'
     pod 'CocoaAsyncSocket'
     pod 'RESideMenu'
-    pod 'MWPhotoBrowser'
+    #    pod 'MWPhotoBrowser'
     pod 'FlatUIKit'
     
 end

@@ -8,7 +8,7 @@
 
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
-
+#ifdef __OBJC__
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
@@ -47,8 +47,12 @@ static const int ddLogLevel = DDLogLevelError;
 #endif
 
 //#import <GCDAsyncSocket.h>  //第三方socket通讯类库， 对系统CFNetwork类库进行了封装
+#import "EMSDK.h"
+#import "EaseUI.h"
+#define NSEaseLocalizedString(key, comment) [[NSBundle bundleWithURL:[[NSBundle mainBundle] URLForResource:@"EaseUIResource" withExtension:@"bundle"]] localizedStringForKey:(key) value:@"" table:nil]
 
-#import <MBProgressHUD.h>       //实现安卓toast风格提示，弹出提示框架
+
+#import "MBProgressHUD.h"       //实现安卓toast风格提示，弹出提示框架
 
 #define equalTo(...)                     mas_equalTo(__VA_ARGS__)
 #define greaterThanOrEqualTo(...)        mas_greaterThanOrEqualTo(__VA_ARGS__)
@@ -59,5 +63,5 @@ static const int ddLogLevel = DDLogLevelError;
 #import <RESideMenu.h>          //QQ的左侧菜单风格
 
 //#import <MWPhotoBrowser.h>      //图片浏览器
-
+#endif
 #endif /* PrefixHeader_pch */

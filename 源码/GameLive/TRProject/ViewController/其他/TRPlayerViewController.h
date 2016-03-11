@@ -7,8 +7,8 @@
 //
 
 #import <AVKit/AVKit.h>
-@import AVKit;
-@import AVFoundation;
+#import <AVKit/AVKit.h>
+#import <AVFoundation/AVFoundation.h>
 
 @interface TRPlayerViewController : AVPlayerViewController
 

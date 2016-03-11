@@ -9,10 +9,12 @@
 #import "WMPageController.h"
 #import "WMPageConst.h"
 
-static CGFloat kWMMarginToNavigationItem = 6.0;
+static CGFloat   const kWMMarginToNavigationItem = 6.0;
+static NSInteger const kWMUndefinedIndex = -1;
 @interface WMPageController () {
     CGFloat _viewHeight, _viewWidth, _viewX, _viewY, _targetX, _superviewHeight;
     BOOL    _animate, _hasInited, _shouldNotScroll;
+    NSInteger _initializedIndex;
 }
 @property (nonatomic, strong, readwrite) UIViewController *currentViewController;
 // 用于记录子控制器view的frame，用于 scrollView 上的展示的位置
@@ -140,10 +142,37 @@ static CGFloat kWMMarginToNavigationItem = 6.0;
     }
 }
 
+// 完全进入控制器 (即停止滑动后调用)
 - (void)didEnterController:(UIViewController *)vc atIndex:(NSInteger)index {
-    if (self.childControllersCount && [self.delegate respondsToSelector:@selector(pageController:didEnterViewController:withInfo:)]) {
-        NSDictionary *info = [self infoWithIndex:index];
+    if (!self.childControllersCount) { return; }
+    
+    NSDictionary *info = [self infoWithIndex:index];
+    if ([self.delegate respondsToSelector:@selector(pageController:didEnterViewController:withInfo:)]) {
         [self.delegate pageController:self didEnterViewController:vc withInfo:info];
+    }
+    
+    // 当控制器创建时，调用延迟加载的代理方法
+    if (_initializedIndex == index && [self.delegate respondsToSelector:@selector(pageController:lazyLoadViewController:withInfo:)]) {
+        [self.delegate pageController:self lazyLoadViewController:vc withInfo:info];
+        _initializedIndex = kWMUndefinedIndex;
+    }
+
+    // 根据 preloadPolicy 预加载控制器
+    if (self.preloadPolicy == WMPageControllerPreloadPolicyNever) { return; }
+    int start = 0;
+    int end = (int)self.childControllersCount - 1;
+    if (index > self.preloadPolicy) {
+        start = (int)index - self.preloadPolicy;
+    }
+    if (self.childControllersCount - 1 > self.preloadPolicy + index) {
+        end = (int)index + self.preloadPolicy;
+    }
+    for (int i = start; i <= end; i++) {
+        // 如果已存在，不需要预加载
+        if (![self.memCache objectForKey:@(i)] && !self.displayVC[@(i)]) {
+            [self addViewControllerAtIndex:i];
+            [self postAddToSuperViewNotificationWithIndex:i];
+        }
     }
 }
 
@@ -182,6 +211,7 @@ static CGFloat kWMMarginToNavigationItem = 6.0;
 
 - (void)clearDatas {
     _hasInited = NO;
+    _selectIndex = self.selectIndex < self.childControllersCount ? self.selectIndex : (int)self.childControllersCount - 1;
     NSArray *displayingViewControllers = self.displayVC.allValues;
     for (UIViewController *vc in displayingViewControllers) {
         [vc.view removeFromSuperview];
@@ -230,8 +260,11 @@ static CGFloat kWMMarginToNavigationItem = 6.0;
     _menuItemWidth = WMMenuItemWidth;
     
     _memCache = [[NSCache alloc] init];
+    _initializedIndex = kWMUndefinedIndex;
     
     self.automaticallyAdjustsScrollViewInsets = NO;
+    self.preloadPolicy = WMPageControllerPreloadPolicyNever;
+    self.cachePolicy = WMPageControllerCachePolicyNoLimit;
     
     self.delegate = self;
     self.dataSource = self;
@@ -308,16 +341,7 @@ static CGFloat kWMMarginToNavigationItem = 6.0;
         UIViewController *vc = [self.displayVC objectForKey:@(i)];
         if ([self isInScreen:frame]) {
             if (vc == nil) {
-                // 先从 cache 中取
-                vc = [self.memCache objectForKey:@(i)];
-                if (vc) {
-                    // cache 中存在，添加到 scrollView 上，并放入display
-                    [self addCachedViewController:vc atIndex:i];
-                } else {
-                    // cache 中也不存在，创建并添加到display
-                    [self addViewControllerAtIndex:i];
-                }
-                [self postAddToSuperViewNotificationWithIndex:i];
+                [self initializedControllerWithIndexIfNeeded:i];
             }
         } else {
             if (vc) {
@@ -326,6 +350,20 @@ static CGFloat kWMMarginToNavigationItem = 6.0;
             }
         }
     }
+}
+
+// 创建或从缓存中获取控制器并添加到视图上
+- (void)initializedControllerWithIndexIfNeeded:(NSInteger)index {
+    // 先从 cache 中取
+    UIViewController *vc = [self.memCache objectForKey:@(index)];
+    if (vc) {
+        // cache 中存在，添加到 scrollView 上，并放入display
+        [self addCachedViewController:vc atIndex:index];
+    } else {
+        // cache 中也不存在，创建并添加到display
+        [self addViewControllerAtIndex:(int)index];
+    }
+    [self postAddToSuperViewNotificationWithIndex:(int)index];
 }
 
 - (void)removeSuperfluousViewControllersIfNeeded {
@@ -347,8 +385,9 @@ static CGFloat kWMMarginToNavigationItem = 6.0;
     [self.displayVC setObject:viewController forKey:@(index)];
 }
 
-// 添加子控制器
+// 创建并添加子控制器
 - (void)addViewControllerAtIndex:(int)index {
+    _initializedIndex = index;
     UIViewController *viewController = [self initializeViewControllerAtIndex:index];
     if (self.values.count == self.childControllersCount && self.keys.count == self.childControllersCount) {
         [viewController setValue:self.values[index] forKey:self.keys[index]];
@@ -463,6 +502,14 @@ static CGFloat kWMMarginToNavigationItem = 6.0;
     _shouldNotScroll = NO;
 }
 
+- (void)adjustDisplayingViewControllersFrame {
+    [self.displayVC enumerateKeysAndObjectsUsingBlock:^(NSNumber * _Nonnull key, UIViewController * _Nonnull vc, BOOL * _Nonnull stop) {
+        NSInteger index = key.integerValue;
+        CGRect frame = [self.childViewFrames[index] CGRectValue];
+        vc.view.frame = frame;
+    }];
+}
+
 - (void)adjustMenuViewFrame {
     // 根据是否在导航栏上展示调整frame
     CGFloat menuHeight = self.menuHeight;
@@ -529,8 +576,11 @@ static CGFloat kWMMarginToNavigationItem = 6.0;
     
     [self adjustMenuViewFrame];
     
+    [self adjustDisplayingViewControllersFrame];
+    
     [self removeSuperfluousViewControllersIfNeeded];
-    self.currentViewController.view.frame = [self.childViewFrames[self.selectIndex] CGRectValue];
+
+//    self.currentViewController.view.frame = [self.childViewFrames[self.selectIndex] CGRectValue];
     _hasInited = YES;
     [self.view layoutIfNeeded];
 }
@@ -586,9 +636,11 @@ static CGFloat kWMMarginToNavigationItem = 6.0;
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
     _animate = YES;
+    self.menuView.userInteractionEnabled = NO;
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    self.menuView.userInteractionEnabled = YES;
     _selectIndex = (int)scrollView.contentOffset.x / _viewWidth;
     [self removeSuperfluousViewControllersIfNeeded];
     self.currentViewController = self.displayVC[@(self.selectIndex)];
@@ -605,8 +657,8 @@ static CGFloat kWMMarginToNavigationItem = 6.0;
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
     if (!decelerate) {
+        self.menuView.userInteractionEnabled = YES;
         CGFloat rate = _targetX / _viewWidth;
-        [self removeSuperfluousViewControllersIfNeeded];
         [self.menuView slideMenuAtProgress:rate];
     }
 }
@@ -617,23 +669,24 @@ static CGFloat kWMMarginToNavigationItem = 6.0;
 
 #pragma mark - WMMenuView Delegate
 - (void)menuView:(WMMenuView *)menu didSelesctedIndex:(NSInteger)index currentIndex:(NSInteger)currentIndex {
+    if (!_hasInited) { return; }
     NSInteger gap = (NSInteger)labs(index - currentIndex);
     _selectIndex = (int)index;
     _animate = NO;
     CGPoint targetP = CGPointMake(_viewWidth*index, 0);
-    
-    [self.scrollView setContentOffset:targetP animated:gap > 1 ? NO : self.pageAnimatable];
+    BOOL animate = (gap > 1 || !_hasInited) ? NO : self.pageAnimatable;
+    [self.scrollView setContentOffset:targetP animated:animate];
     if (gap > 1 || !self.pageAnimatable) {
         // 由于不触发 -scrollViewDidScroll: 手动处理控制器
+        [self removeSuperfluousViewControllersIfNeeded];
         UIViewController *currentViewController = self.displayVC[@(currentIndex)];
-        // 最好判断一下，因为在做某个项目时，currentViewController = nil
         if (currentViewController) {
             [self removeViewController:currentViewController atIndex:currentIndex];
         }
         [self layoutChildViewControllers];
         self.currentViewController = self.displayVC[@(self.selectIndex)];
         [self postFullyDisplayedNotificationWithCurrentIndex:(int)index];
-        [self didEnterController:self.currentViewController atIndex:currentIndex];
+        [self didEnterController:self.currentViewController atIndex:index];
     }
 }
 
