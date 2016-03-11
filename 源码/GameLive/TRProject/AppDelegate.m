@@ -11,6 +11,7 @@
 #import "TRCategoriesViewController.h"
 #import "TRLiveListViewController.h"
 #import "TRIntroViewController.h"
+#import "TRChatViewController.h"
 
 @interface AppDelegate ()<EMClientDelegate>
 @end
@@ -69,7 +70,9 @@
         UINavigationController *introNavi = [[UINavigationController alloc] initWithRootViewController:introVC];
         UINavigationController *categoriesNavi = [[UINavigationController alloc] initWithRootViewController:categoriesVC];
         UINavigationController *liveListNavi = [[UINavigationController alloc] initWithRootViewController:liveListVC];
-        _tabC.viewControllers = @[introNavi, categoriesNavi, liveListNavi];
+        TRChatViewController *chatVC = [[TRChatViewController alloc] initWithStyle:UITableViewStyleGrouped];
+        UINavigationController *chatNavi = [[UINavigationController alloc] initWithRootViewController:chatVC];
+        _tabC.viewControllers = @[introNavi, categoriesNavi, liveListNavi, chatNavi];
     }
     return _tabC;
 }

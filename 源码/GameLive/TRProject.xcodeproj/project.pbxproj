@@ -207,6 +207,7 @@
 		387FB3701C92517C007FDBDB /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 387FB36F1C92517C007FDBDB /* ImageIO.framework */; };
 		387FB3721C92518B007FDBDB /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 387FB3711C92518B007FDBDB /* libresolv.tbd */; };
 		387FB3731C925193007FDBDB /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3811F05A1C8FB6AC000463AB /* libiconv.tbd */; };
+		387FB37D1C925709007FDBDB /* TRChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 387FB37C1C925709007FDBDB /* TRChatViewController.m */; };
 		3899BC981C7D87620032ADEA /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3899BC971C7D87620032ADEA /* CFNetwork.framework */; };
 		38A1A33B1C7452CF007EEEB7 /* Factory.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A1A33A1C7452CF007EEEB7 /* Factory.m */; };
 		38A1A3461C745317007EEEB7 /* NSObject+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A1A3411C745317007EEEB7 /* NSObject+AFNetworking.m */; };
@@ -629,6 +630,8 @@
 		387FB36C1C925150007FDBDB /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		387FB36F1C92517C007FDBDB /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		387FB3711C92518B007FDBDB /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		387FB37B1C925709007FDBDB /* TRChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRChatViewController.h; sourceTree = "<group>"; };
+		387FB37C1C925709007FDBDB /* TRChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRChatViewController.m; sourceTree = "<group>"; };
 		3899BC971C7D87620032ADEA /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		38A1A3381C74527F007EEEB7 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		38A1A3391C7452CF007EEEB7 /* Factory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Factory.h; sourceTree = "<group>"; };
@@ -1433,6 +1436,20 @@
 			path = recordView;
 			sourceTree = "<group>";
 		};
+		387FB37A1C9256C7007FDBDB /* 聊一聊 */ = {
+			isa = PBXGroup;
+			children = (
+				38BED4D21C925EF20081C7C8 /* 登录注册 */,
+				38BED4D31C925EF20081C7C8 /* 个人信息 */,
+				38BED4D41C925EF20081C7C8 /* 好友列表 */,
+				38BED4D51C925EF20081C7C8 /* 聊天记录 */,
+				38BED4D61C925EF20081C7C8 /* 添加好友 */,
+				387FB37B1C925709007FDBDB /* TRChatViewController.h */,
+				387FB37C1C925709007FDBDB /* TRChatViewController.m */,
+			);
+			path = "聊一聊";
+			sourceTree = "<group>";
+		};
 		38A1A32B1C74526C007EEEB7 /* Category */ = {
 			isa = PBXGroup;
 			children = (
@@ -1529,6 +1546,7 @@
 		38A1A3331C74526C007EEEB7 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				387FB37A1C9256C7007FDBDB /* 聊一聊 */,
 				38C11E681C8D7AB300FA0235 /* 栏目 */,
 				38C11E691C8D7AB300FA0235 /* 其他 */,
 				38C11E6A1C8D7AB300FA0235 /* 推荐 */,
@@ -1619,6 +1637,41 @@
 				38A1A3381C74527F007EEEB7 /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		38BED4D21C925EF20081C7C8 /* 登录注册 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "登录注册";
+			sourceTree = "<group>";
+		};
+		38BED4D31C925EF20081C7C8 /* 个人信息 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "个人信息";
+			sourceTree = "<group>";
+		};
+		38BED4D41C925EF20081C7C8 /* 好友列表 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "好友列表";
+			sourceTree = "<group>";
+		};
+		38BED4D51C925EF20081C7C8 /* 聊天记录 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "聊天记录";
+			sourceTree = "<group>";
+		};
+		38BED4D61C925EF20081C7C8 /* 添加好友 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "添加好友";
 			sourceTree = "<group>";
 		};
 		38C11E4B1C8D7A7600FA0235 /* 栏目 */ = {
@@ -2106,6 +2159,7 @@
 				382C11831C7E8CDD00F34BB0 /* AppDelegate+System.m in Sources */,
 				387FB2261C9250DC007FDBDB /* MWTapDetectingImageView.m in Sources */,
 				387FB2251C9250DC007FDBDB /* MWPhotoBrowser.m in Sources */,
+				387FB37D1C925709007FDBDB /* TRChatViewController.m in Sources */,
 				387FB25A1C9250DC007FDBDB /* EaseConversationListViewController.m in Sources */,
 				38ADA3B81C626AAF0093502F /* main.m in Sources */,
 				387FB24C1C9250DC007FDBDB /* NSDate+Category.m in Sources */,
