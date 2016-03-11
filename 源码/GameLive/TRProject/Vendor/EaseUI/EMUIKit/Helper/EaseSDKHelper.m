@@ -124,6 +124,7 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
         options.enableConsoleLog = YES;
     }
     
+    
     BOOL sandBox = [otherConfig objectForKey:@"easeSandBox"] && [[otherConfig objectForKey:@"easeSandBox"] boolValue];
     if (!sandBox) {
         [[EMClient sharedClient] initializeSDKWithOptions:options];

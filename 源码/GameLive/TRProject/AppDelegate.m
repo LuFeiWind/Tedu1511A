@@ -13,8 +13,9 @@
 #import "TRIntroViewController.h"
 #import "TRChatViewController.h"
 #import <SMS_SDK/SMSSDK.h>
+#import "TRFriend.h"
 
-@interface AppDelegate ()<EMClientDelegate>
+@interface AppDelegate ()<EMClientDelegate, EMContactManagerDelegate>
 @end
 
 @implementation AppDelegate
@@ -24,18 +25,57 @@
     //全局默认配置
     [self setupGlobalConfig];
     self.window.rootViewController = self.tabC;
-    [[EaseSDKHelper shareHelper] easemobApplication:application
-                      didFinishLaunchingWithOptions:launchOptions
-                                             appkey:kEaseMobKey
-                                       apnsCertName:nil
-                                        otherConfig:@{kSDKConfigEnableConsoleLogger:[NSNumber numberWithBool:NO]}];
+    //    [[EaseSDKHelper shareHelper] easemobApplication:application
+    //                      didFinishLaunchingWithOptions:launchOptions
+    //                                             appkey:kEaseMobKey
+    //                                       apnsCertName:nil
+    //                                        otherConfig:@{kSDKConfigEnableConsoleLogger:@NO}];
     
+    EMOptions *options = [EMOptions optionsWithAppkey:kEaseMobKey];
+    [[EMClient sharedClient] initializeSDKWithOptions:options];
+    
+    [[EMClient sharedClient] addDelegate:self delegateQueue:dispatch_get_main_queue()];
     
     //初始化应用，appKey和appSecret从后台申请得
     [SMSSDK registerApp:kShareSDKAppKey
              withSecret:kShareSDKAppSecret];
+    
+    [[EMClient sharedClient].contactManager addDelegate:self delegateQueue:nil];
     return YES;
 }
+
+/*!
+ *  用户A发送加用户B为好友的申请，用户B会收到这个回调
+ *
+ *  @param aUsername   用户名
+ *  @param aMessage    附属信息
+ */
+- (void)didReceiveFriendInvitationFromUsername:(NSString *)aUsername
+                                       message:(NSString *)aMessage{
+    TRFriend *friend = [TRFriend new];
+    friend.userName = aUsername;
+    friend.message = aMessage;
+    [friend saveUser];
+    
+    NSLog(@"didReceiveFriendInvitationFromUsername %@", aUsername);
+}
+
+/*!
+ @method
+ @brief 用户A发送加用户B为好友的申请，用户B同意后，用户A会收到这个回调
+ */
+- (void)didReceiveAgreedFromUsername:(NSString *)aUsername{
+    [self.window showWarning:[aUsername stringByAppendingString:@"已同意您的好友请求!"]];
+}
+
+/*!
+ @method
+ @brief 用户A发送加用户B为好友的申请，用户B拒绝后，用户A会收到这个回调
+ */
+- (void)didReceiveDeclinedFromUsername:(NSString *)aUsername{
+    [self.window showWarning:[aUsername stringByAppendingString:@"已拒绝您的好友请求!"]];
+}
+
 
 #pragma mark - EaseMob delegate
 - (void)didAutoLoginWithError:(EMError *)aError{

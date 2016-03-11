@@ -17,4 +17,6 @@
 
 /** 右上角添加搜索按钮 */
 + (void)addSearchItemToVC:(UIViewController *)vc clickHandler:(void(^)())clickHandler;
+
++ (BOOL)isPhoneNumber:(NSString *)phoneNum;
 @end

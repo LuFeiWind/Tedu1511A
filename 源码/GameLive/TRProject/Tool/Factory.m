@@ -9,6 +9,12 @@
 #import "Factory.h"
 #import <CommonCrypto/CommonDigest.h>
 @implementation Factory
+
++ (BOOL)isPhoneNumber:(NSString *)phoneNum{
+    return phoneNum.length == 11 && phoneNum.doubleValue > 10000000000;
+}
+
+
 + (NSString *)md5:(NSString *)str
 {
     const char *cStr = [str UTF8String];

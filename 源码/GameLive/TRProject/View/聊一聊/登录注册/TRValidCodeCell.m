@@ -43,23 +43,27 @@
         [_validBtn setTitle:@"获取验证码" forState:UIControlStateNormal];
         [_validBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [_validBtn bk_addEventHandler:^(UIButton *sender) {
-            sender.enabled = NO;
-            __block NSInteger duration = 59;
-            sender.backgroundColor = [UIColor darkGrayColor];
-            [sender setTitle:@"60" forState:UIControlStateNormal];
-            [NSTimer bk_scheduledTimerWithTimeInterval:1 block:^(NSTimer *timer) {
-                [sender setTitle:@(duration--).stringValue forState:UIControlStateNormal];
-                if (duration == 0) {
-                    [timer invalidate];
-                    sender.enabled = YES;
-                    sender.backgroundColor = kNaviBarBGColor;
-                    [sender setTitle:@"获取验证码" forState:UIControlStateNormal];
-                }
-            } repeats:YES];
             self.getValidCode();
         } forControlEvents:UIControlEventTouchUpInside];
     }
     return _validBtn;
+}
+
+- (void)showWaitingStyle{
+    _validBtn.enabled = NO;
+    __block NSInteger duration = 59;
+    _validBtn.backgroundColor = [UIColor darkGrayColor];
+    [_validBtn setTitle:@"60" forState:UIControlStateNormal];
+    [NSTimer bk_scheduledTimerWithTimeInterval:1 block:^(NSTimer *timer) {
+        [_validBtn setTitle:@(duration--).stringValue forState:UIControlStateNormal];
+        if (duration == 0) {
+            [timer invalidate];
+            _validBtn.enabled = YES;
+            _validBtn.backgroundColor = kNaviBarBGColor;
+            [_validBtn setTitle:@"获取验证码" forState:UIControlStateNormal];
+        }
+    } repeats:YES];
+    
 }
 
 - (UITextField *)textField {

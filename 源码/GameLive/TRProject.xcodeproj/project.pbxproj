@@ -222,6 +222,12 @@
 		38A641FA1C8C225D00FCBF96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38A641F71C8C225D00FCBF96 /* Main.storyboard */; };
 		38ADA3B81C626AAF0093502F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 38ADA3B71C626AAF0093502F /* main.m */; };
 		38ADA3BB1C626AAF0093502F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 38ADA3BA1C626AAF0093502F /* AppDelegate.m */; };
+		38B3F7A81C92B1F9003B5C04 /* TRFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B3F7A71C92B1F9003B5C04 /* TRFriendsViewController.m */; };
+		38B3F7AB1C92B323003B5C04 /* TRAddFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B3F7AA1C92B323003B5C04 /* TRAddFriendViewController.m */; };
+		38B3F7AE1C92BA04003B5C04 /* TRUserNameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B3F7AD1C92BA04003B5C04 /* TRUserNameCell.m */; };
+		38B3F7B21C92BB55003B5C04 /* TRFriendInvitationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B3F7B11C92BB55003B5C04 /* TRFriendInvitationViewController.m */; };
+		38B3F7B61C92BC1D003B5C04 /* TRFriend.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B3F7B51C92BC1D003B5C04 /* TRFriend.m */; };
+		38B3F7B91C92BDF8003B5C04 /* TRFriendInvitationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B3F7B81C92BDF8003B5C04 /* TRFriendInvitationCell.m */; };
 		38BABC3A1C8E99EB00CE45C9 /* TRCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38BABC391C8E99EB00CE45C9 /* TRCategoryViewController.m */; };
 		38BABC3D1C8E9B7600CE45C9 /* TRCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 38BABC3C1C8E9B7600CE45C9 /* TRCategoryCell.m */; };
 		38BED4D91C925FBF0081C7C8 /* TRLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38BED4D81C925FBF0081C7C8 /* TRLoginViewController.m */; };
@@ -668,6 +674,18 @@
 		38ADA3B91C626AAF0093502F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		38ADA3BA1C626AAF0093502F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		38ADA3C71C626AAF0093502F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		38B3F7A61C92B1F9003B5C04 /* TRFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRFriendsViewController.h; sourceTree = "<group>"; };
+		38B3F7A71C92B1F9003B5C04 /* TRFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRFriendsViewController.m; sourceTree = "<group>"; };
+		38B3F7A91C92B323003B5C04 /* TRAddFriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRAddFriendViewController.h; sourceTree = "<group>"; };
+		38B3F7AA1C92B323003B5C04 /* TRAddFriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRAddFriendViewController.m; sourceTree = "<group>"; };
+		38B3F7AC1C92BA04003B5C04 /* TRUserNameCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRUserNameCell.h; sourceTree = "<group>"; };
+		38B3F7AD1C92BA04003B5C04 /* TRUserNameCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRUserNameCell.m; sourceTree = "<group>"; };
+		38B3F7B01C92BB55003B5C04 /* TRFriendInvitationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRFriendInvitationViewController.h; sourceTree = "<group>"; };
+		38B3F7B11C92BB55003B5C04 /* TRFriendInvitationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRFriendInvitationViewController.m; sourceTree = "<group>"; };
+		38B3F7B41C92BC1D003B5C04 /* TRFriend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRFriend.h; sourceTree = "<group>"; };
+		38B3F7B51C92BC1D003B5C04 /* TRFriend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRFriend.m; sourceTree = "<group>"; };
+		38B3F7B71C92BDF8003B5C04 /* TRFriendInvitationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRFriendInvitationCell.h; sourceTree = "<group>"; };
+		38B3F7B81C92BDF8003B5C04 /* TRFriendInvitationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRFriendInvitationCell.m; sourceTree = "<group>"; };
 		38BABC381C8E99EB00CE45C9 /* TRCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRCategoryViewController.h; sourceTree = "<group>"; };
 		38BABC391C8E99EB00CE45C9 /* TRCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRCategoryViewController.m; sourceTree = "<group>"; };
 		38BABC3B1C8E9B7600CE45C9 /* TRCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRCategoryCell.h; sourceTree = "<group>"; };
@@ -1469,6 +1487,7 @@
 		387FB37A1C9256C7007FDBDB /* 聊一聊 */ = {
 			isa = PBXGroup;
 			children = (
+				38B3F7AF1C92BB06003B5C04 /* 好友请求 */,
 				38BED4D21C925EF20081C7C8 /* 登录注册 */,
 				38BED4D31C925EF20081C7C8 /* 个人信息 */,
 				38BED4D41C925EF20081C7C8 /* 好友列表 */,
@@ -1511,6 +1530,7 @@
 		38A1A32D1C74526C007EEEB7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				38B3F7B31C92BBF9003B5C04 /* 好友 */,
 				38C11E4B1C8D7A7600FA0235 /* 栏目 */,
 				38C11E501C8D7A7600FA0235 /* 其他 */,
 				38C11E531C8D7A7600FA0235 /* 推荐 */,
@@ -1671,6 +1691,24 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		38B3F7AF1C92BB06003B5C04 /* 好友请求 */ = {
+			isa = PBXGroup;
+			children = (
+				38B3F7B01C92BB55003B5C04 /* TRFriendInvitationViewController.h */,
+				38B3F7B11C92BB55003B5C04 /* TRFriendInvitationViewController.m */,
+			);
+			path = "好友请求";
+			sourceTree = "<group>";
+		};
+		38B3F7B31C92BBF9003B5C04 /* 好友 */ = {
+			isa = PBXGroup;
+			children = (
+				38B3F7B41C92BC1D003B5C04 /* TRFriend.h */,
+				38B3F7B51C92BC1D003B5C04 /* TRFriend.m */,
+			);
+			path = "好友";
+			sourceTree = "<group>";
+		};
 		38BED4D21C925EF20081C7C8 /* 登录注册 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1692,6 +1730,8 @@
 		38BED4D41C925EF20081C7C8 /* 好友列表 */ = {
 			isa = PBXGroup;
 			children = (
+				38B3F7A61C92B1F9003B5C04 /* TRFriendsViewController.h */,
+				38B3F7A71C92B1F9003B5C04 /* TRFriendsViewController.m */,
 			);
 			path = "好友列表";
 			sourceTree = "<group>";
@@ -1706,6 +1746,8 @@
 		38BED4D61C925EF20081C7C8 /* 添加好友 */ = {
 			isa = PBXGroup;
 			children = (
+				38B3F7A91C92B323003B5C04 /* TRAddFriendViewController.h */,
+				38B3F7AA1C92B323003B5C04 /* TRAddFriendViewController.m */,
 			);
 			path = "添加好友";
 			sourceTree = "<group>";
@@ -1736,6 +1778,8 @@
 		38BED4DC1C9260290081C7C8 /* 个人信息 */ = {
 			isa = PBXGroup;
 			children = (
+				38B3F7AC1C92BA04003B5C04 /* TRUserNameCell.h */,
+				38B3F7AD1C92BA04003B5C04 /* TRUserNameCell.m */,
 			);
 			path = "个人信息";
 			sourceTree = "<group>";
@@ -1743,6 +1787,8 @@
 		38BED4DD1C9260290081C7C8 /* 好友列表 */ = {
 			isa = PBXGroup;
 			children = (
+				38B3F7B71C92BDF8003B5C04 /* TRFriendInvitationCell.h */,
+				38B3F7B81C92BDF8003B5C04 /* TRFriendInvitationCell.m */,
 			);
 			path = "好友列表";
 			sourceTree = "<group>";
@@ -2144,6 +2190,7 @@
 				387FB21D1C9250DC007FDBDB /* MJRefreshConst.m in Sources */,
 				387FB2211C9250DC007FDBDB /* MWCaptionView.m in Sources */,
 				387FB1FF1C9250DC007FDBDB /* EaseUI.m in Sources */,
+				38B3F7AE1C92BA04003B5C04 /* TRUserNameCell.m in Sources */,
 				387FB2151C9250DC007FDBDB /* MJRefreshAutoStateFooter.m in Sources */,
 				387FB2681C9250DC007FDBDB /* EaseBubbleView+Location.m in Sources */,
 				387FB2741C9250DC007FDBDB /* EaseRecordView.m in Sources */,
@@ -2153,7 +2200,9 @@
 				387FB24B1C9250DC007FDBDB /* EaseUserModel.m in Sources */,
 				387FB0A71C901B37007FDBDB /* TRIntroSectionHeaderView.m in Sources */,
 				387FB24F1C9250DC007FDBDB /* NSString+Valid.m in Sources */,
+				38B3F7B91C92BDF8003B5C04 /* TRFriendInvitationCell.m in Sources */,
 				38A1A3551C745698007EEEB7 /* iCarousel.m in Sources */,
+				38B3F7B21C92BB55003B5C04 /* TRFriendInvitationViewController.m in Sources */,
 				387FB2541C9250DC007FDBDB /* EaseMessageReadManager.m in Sources */,
 				387FB25E1C9250DC007FDBDB /* EaseUsersListViewController.m in Sources */,
 				387FB22F1C9250DC007FDBDB /* EMSDWebImageManager.m in Sources */,
@@ -2184,6 +2233,7 @@
 				38C11E5F1C8D7A7600FA0235 /* TRSearchModel.m in Sources */,
 				387FB23C1C9250DC007FDBDB /* PSTCollectionViewCell.m in Sources */,
 				38A1A33B1C7452CF007EEEB7 /* Factory.m in Sources */,
+				38B3F7B61C92BC1D003B5C04 /* TRFriend.m in Sources */,
 				38BED4E21C92604E0081C7C8 /* TRLoginCell.m in Sources */,
 				38BED4D91C925FBF0081C7C8 /* TRLoginViewController.m in Sources */,
 				387FB2521C9250DC007FDBDB /* EaseChineseToPinyin.m in Sources */,
@@ -2231,6 +2281,7 @@
 				38C11E621C8D7A7600FA0235 /* TRRoomListModel.m in Sources */,
 				387FB2281C9250DC007FDBDB /* MWZoomingScrollView.m in Sources */,
 				38236D0B1C8D191A00BA928D /* TRLiveNetManager.m in Sources */,
+				38B3F7A81C92B1F9003B5C04 /* TRFriendsViewController.m in Sources */,
 				3811F05E1C8FBED2000463AB /* TRIntroViewModel.m in Sources */,
 				387FB2311C9250DC007FDBDB /* MKAnnotationView+EMWebCache.m in Sources */,
 				387FB2201C9250DC007FDBDB /* UIView+MJExtension.m in Sources */,
@@ -2257,6 +2308,7 @@
 				387FB2691C9250DC007FDBDB /* EaseBubbleView+Text.m in Sources */,
 				38EC7C621C8FF40B005D0131 /* TRPlayerViewController.m in Sources */,
 				387FB2231C9250DC007FDBDB /* MWGridViewController.m in Sources */,
+				38B3F7AB1C92B323003B5C04 /* TRAddFriendViewController.m in Sources */,
 				38236D081C8D18EC00BA928D /* TRBaseViewController.m in Sources */,
 				387FB2381C9250DC007FDBDB /* UIImageView+EMWebCache.m in Sources */,
 				387FB2411C9250DC007FDBDB /* PSTCollectionViewLayout.m in Sources */,

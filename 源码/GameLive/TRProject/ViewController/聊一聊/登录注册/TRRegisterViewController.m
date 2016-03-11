@@ -55,13 +55,20 @@
         cell.textField.placeholder = @[@"请输入手机号", @"请输入密码"][indexPath.row];
         cell.textField.secureTextEntry = indexPath.row; //0假 1真, 是否显示密码
         cell.iconIV.image = [UIImage imageNamed:@[@"用户名", @"密码"][indexPath.row]];
+        if (indexPath.row == 0) {
+            cell.textField.keyboardType = UIKeyboardTypeNumberPad;
+        }else{
+            cell.textField.keyboardType = UIKeyboardTypeDefault;
+        }
         return cell;
     }else{
-        TRValidCodeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TRValidCodeCell" forIndexPath:indexPath];
+        __weak TRValidCodeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TRValidCodeCell" forIndexPath:indexPath];
+        cell.textField.keyboardType = UIKeyboardTypeNumberPad;
         cell.getValidCode = ^(){
-            TRLoginCell *cell = [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-            NSString *phoneNum = cell.textField.text;
-            if (!(phoneNum.length == 11 && phoneNum.doubleValue > 10000000000)) {
+            TRLoginCell *cell11 = [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+            NSString *phoneNum = cell11.textField.text;
+            [self.view endEditing:YES];
+            if (![Factory isPhoneNumber:phoneNum]) {
                 [self.view showWarning:@"请输入正确的手机号码"];
                 return;
             }
@@ -72,6 +79,7 @@
                     [self.view showWarning:error.localizedDescription];
                 }else{
                     [self.view showWarning:@"验证码已发送"];
+                    [cell showWaitingStyle];
                 }
             }];
         };
@@ -97,6 +105,43 @@
             make.height.equalTo(44);
         }];
         [loginBtn bk_addEventHandler:^(id sender) {
+            [self.view endEditing:YES];
+            //注册
+            TRLoginCell *cell0 = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+            TRLoginCell *cell1 = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
+            TRValidCodeCell *cell2 = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0]];
+            
+            NSString *phoneNum = cell0.textField.text;
+            NSString *pwd = cell1.textField.text;
+            NSString *validCode = cell2.textField.text;
+            
+            if (validCode.length == 0) {
+                [self.view showWarning:@"请输入验证"];
+                return;
+            }
+            if (pwd.length == 0) {
+                [self.view showWarning:@"请输入密码"];
+                return;
+            }
+            if (![Factory isPhoneNumber:phoneNum]) {
+                [self.view showWarning:@"请输入手机号"];
+                return;
+            }
+            
+            [SMSSDK commitVerificationCode:validCode phoneNumber:phoneNum zone:@"86" result:^(NSError *error) {
+                if (error) {
+                    [self.view showWarning:error.localizedDescription];
+                }else{
+                    EMError *error = [[EMClient sharedClient] registerWithUsername:phoneNum password:[Factory md5:pwd]];
+                    if (error==nil) {
+                        NSLog(@"注册成功");
+                        [self.navigationController popViewControllerAnimated:YES];
+                        [kAppdelegate.window showWarning:@"注册成功"];
+                    }
+                }
+            }];
+            
+            
             
         } forControlEvents:UIControlEventTouchUpInside];
     }
@@ -104,3 +149,16 @@
 }
 
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+

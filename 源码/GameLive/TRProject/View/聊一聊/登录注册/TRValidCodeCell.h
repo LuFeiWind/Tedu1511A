@@ -15,4 +15,5 @@
 
 @property (nonatomic, copy) void(^getValidCode)();
 
+- (void)showWaitingStyle;
 @end

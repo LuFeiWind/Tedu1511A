@@ -70,6 +70,11 @@
     cell.textField.placeholder = @[@"请输入手机号", @"请输入密码"][indexPath.row];
     cell.textField.secureTextEntry = indexPath.row; //0假 1真, 是否显示密码
     cell.iconIV.image = [UIImage imageNamed:@[@"用户名", @"密码"][indexPath.row]];
+    if (indexPath.row == 0) {
+        cell.textField.keyboardType = UIKeyboardTypeNumberPad;
+    }else{
+        cell.textField.keyboardType = UIKeyboardTypeDefault;
+    }
     return cell;
 }
 
@@ -104,12 +109,12 @@
             make.height.equalTo(44);
         }];
         [loginBtn bk_addEventHandler:^(id sender) {
-            
+            [self.view endEditing:YES];
             TRLoginCell *cell0 = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
             TRLoginCell *cell1 = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
             NSString *phoneNum = cell0.textField.text;
             NSString *pwd = cell1.textField.text;
-            if (!(phoneNum.length == 11 && phoneNum.doubleValue > 10000000000)) {
+            if (![Factory isPhoneNumber:phoneNum]) {
                 [self.view showWarning:@"请输入正确的手机号码"];
                 return;
             }
@@ -121,14 +126,17 @@
             
             BOOL isAutoLogin = [EMClient sharedClient].options.isAutoLogin;
             if (!isAutoLogin) {
-                EMError *error = [[EMClient sharedClient] loginWithUsername:phoneNum password:pwd];
-                if (!error)
-                {
-                    [[EMClient sharedClient].options setIsAutoLogin:YES];
-                    [self dismissViewControllerAnimated:YES completion:nil];
-                }
+                dispatch_async(dispatch_get_global_queue(0, 0), ^{
+                    EMError *error = [[EMClient sharedClient] loginWithUsername:phoneNum password:pwd];
+                    if (!error)
+                    {
+                        [[EMClient sharedClient].options setIsAutoLogin:YES];
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            [self dismissViewControllerAnimated:YES completion:nil];
+                        });
+                    }
+                });   
             }
-            
         } forControlEvents:UIControlEventTouchUpInside];
     }
     return _footerView;
