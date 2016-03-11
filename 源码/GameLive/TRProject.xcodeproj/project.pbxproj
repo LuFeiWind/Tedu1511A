@@ -224,6 +224,8 @@
 		38ADA3BB1C626AAF0093502F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 38ADA3BA1C626AAF0093502F /* AppDelegate.m */; };
 		38BABC3A1C8E99EB00CE45C9 /* TRCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38BABC391C8E99EB00CE45C9 /* TRCategoryViewController.m */; };
 		38BABC3D1C8E9B7600CE45C9 /* TRCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 38BABC3C1C8E9B7600CE45C9 /* TRCategoryCell.m */; };
+		38BED4D91C925FBF0081C7C8 /* TRLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38BED4D81C925FBF0081C7C8 /* TRLoginViewController.m */; };
+		38BED4E21C92604E0081C7C8 /* TRLoginCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 38BED4E11C92604E0081C7C8 /* TRLoginCell.m */; };
 		38C11E5D1C8D7A7600FA0235 /* TRCategoriesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C11E4D1C8D7A7600FA0235 /* TRCategoriesModel.m */; };
 		38C11E5E1C8D7A7600FA0235 /* TRCategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C11E4F1C8D7A7600FA0235 /* TRCategoryModel.m */; };
 		38C11E5F1C8D7A7600FA0235 /* TRSearchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C11E521C8D7A7600FA0235 /* TRSearchModel.m */; };
@@ -662,6 +664,10 @@
 		38BABC391C8E99EB00CE45C9 /* TRCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRCategoryViewController.m; sourceTree = "<group>"; };
 		38BABC3B1C8E9B7600CE45C9 /* TRCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRCategoryCell.h; sourceTree = "<group>"; };
 		38BABC3C1C8E9B7600CE45C9 /* TRCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRCategoryCell.m; sourceTree = "<group>"; };
+		38BED4D71C925FBF0081C7C8 /* TRLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRLoginViewController.h; sourceTree = "<group>"; };
+		38BED4D81C925FBF0081C7C8 /* TRLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRLoginViewController.m; sourceTree = "<group>"; };
+		38BED4E01C92604E0081C7C8 /* TRLoginCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRLoginCell.h; sourceTree = "<group>"; };
+		38BED4E11C92604E0081C7C8 /* TRLoginCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRLoginCell.m; sourceTree = "<group>"; };
 		38C11E4C1C8D7A7600FA0235 /* TRCategoriesModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRCategoriesModel.h; sourceTree = "<group>"; };
 		38C11E4D1C8D7A7600FA0235 /* TRCategoriesModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRCategoriesModel.m; sourceTree = "<group>"; };
 		38C11E4E1C8D7A7600FA0235 /* TRCategoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRCategoryModel.h; sourceTree = "<group>"; };
@@ -1535,6 +1541,7 @@
 		38A1A3321C74526C007EEEB7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				38BED4DA1C92600E0081C7C8 /* 聊一聊 */,
 				38C11E721C8E5DB600FA0235 /* 栏目 */,
 				38C11E731C8E5DB600FA0235 /* 其他 */,
 				38C11E741C8E5DB600FA0235 /* 推荐 */,
@@ -1642,6 +1649,8 @@
 		38BED4D21C925EF20081C7C8 /* 登录注册 */ = {
 			isa = PBXGroup;
 			children = (
+				38BED4D71C925FBF0081C7C8 /* TRLoginViewController.h */,
+				38BED4D81C925FBF0081C7C8 /* TRLoginViewController.m */,
 			);
 			path = "登录注册";
 			sourceTree = "<group>";
@@ -1668,6 +1677,55 @@
 			sourceTree = "<group>";
 		};
 		38BED4D61C925EF20081C7C8 /* 添加好友 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "添加好友";
+			sourceTree = "<group>";
+		};
+		38BED4DA1C92600E0081C7C8 /* 聊一聊 */ = {
+			isa = PBXGroup;
+			children = (
+				38BED4DB1C9260290081C7C8 /* 登录注册 */,
+				38BED4DC1C9260290081C7C8 /* 个人信息 */,
+				38BED4DD1C9260290081C7C8 /* 好友列表 */,
+				38BED4DE1C9260290081C7C8 /* 聊天记录 */,
+				38BED4DF1C9260290081C7C8 /* 添加好友 */,
+			);
+			path = "聊一聊";
+			sourceTree = "<group>";
+		};
+		38BED4DB1C9260290081C7C8 /* 登录注册 */ = {
+			isa = PBXGroup;
+			children = (
+				38BED4E01C92604E0081C7C8 /* TRLoginCell.h */,
+				38BED4E11C92604E0081C7C8 /* TRLoginCell.m */,
+			);
+			path = "登录注册";
+			sourceTree = "<group>";
+		};
+		38BED4DC1C9260290081C7C8 /* 个人信息 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "个人信息";
+			sourceTree = "<group>";
+		};
+		38BED4DD1C9260290081C7C8 /* 好友列表 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "好友列表";
+			sourceTree = "<group>";
+		};
+		38BED4DE1C9260290081C7C8 /* 聊天记录 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "聊天记录";
+			sourceTree = "<group>";
+		};
+		38BED4DF1C9260290081C7C8 /* 添加好友 */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -2082,6 +2140,8 @@
 				38C11E5F1C8D7A7600FA0235 /* TRSearchModel.m in Sources */,
 				387FB23C1C9250DC007FDBDB /* PSTCollectionViewCell.m in Sources */,
 				38A1A33B1C7452CF007EEEB7 /* Factory.m in Sources */,
+				38BED4E21C92604E0081C7C8 /* TRLoginCell.m in Sources */,
+				38BED4D91C925FBF0081C7C8 /* TRLoginViewController.m in Sources */,
 				387FB2521C9250DC007FDBDB /* EaseChineseToPinyin.m in Sources */,
 				387FB2191C9250DC007FDBDB /* MJRefreshGifHeader.m in Sources */,
 				387FB26F1C9250DC007FDBDB /* EaseImageView.m in Sources */,

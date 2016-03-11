@@ -7,6 +7,7 @@
 //
 
 #import "TRChatViewController.h"
+#import "TRLoginViewController.h"
 
 @interface TRChatViewController ()
 
@@ -50,6 +51,15 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    if (indexPath.section == 0) {
+        if ([EMClient sharedClient].isLoggedIn) {
+            //个人信息
+        }else{
+            UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:[[TRLoginViewController alloc] initWithStyle:UITableViewStylePlain]];
+            [self presentViewController:navi animated:YES completion:nil];
+        }
+    }
 }
 
 

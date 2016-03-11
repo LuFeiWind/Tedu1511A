@@ -26,7 +26,7 @@
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     TRCategoryCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
-    [cell.iconIV setImageWithURL:[self.categoryVM iconURLForRow:indexPath.row] placeholderImage:[UIImage imageNamed:@"分类"]];
+    [cell.iconIV sd_setImageWithURL:[self.categoryVM iconURLForRow:indexPath.row] placeholderImage:[UIImage imageNamed:@"分类"]];
     cell.titleLb.text = [self.categoryVM titleForRow:indexPath.row];
     cell.viewLb.text = [self.categoryVM viewForRow:indexPath.row];
     cell.nickLb.text = [self.categoryVM nickForRow:indexPath.row];

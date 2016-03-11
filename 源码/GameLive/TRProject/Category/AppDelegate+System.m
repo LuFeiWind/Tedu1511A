@@ -36,7 +36,7 @@ const void *netStatusKey = &netStatusKey;
     [UINavigationBar appearance].translucent = NO;
     [UINavigationBar appearance].barTintColor = kNaviBarBGColor;
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:20]}];
-    
+    [UIBarButtonItem appearance].tintColor = [UIColor whiteColor];
     
     [UITabBar appearance].translucent = NO;
     [UITabBar appearance].barTintColor = kRGBA(237, 236, 235, 1.0);
