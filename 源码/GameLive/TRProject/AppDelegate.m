@@ -12,6 +12,7 @@
 #import "TRLiveListViewController.h"
 #import "TRIntroViewController.h"
 #import "TRChatViewController.h"
+#import <SMS_SDK/SMSSDK.h>
 
 @interface AppDelegate ()<EMClientDelegate>
 @end
@@ -28,6 +29,11 @@
                                              appkey:kEaseMobKey
                                        apnsCertName:nil
                                         otherConfig:@{kSDKConfigEnableConsoleLogger:[NSNumber numberWithBool:NO]}];
+    
+    
+    //初始化应用，appKey和appSecret从后台申请得
+    [SMSSDK registerApp:kShareSDKAppKey
+             withSecret:kShareSDKAppSecret];
     return YES;
 }
 

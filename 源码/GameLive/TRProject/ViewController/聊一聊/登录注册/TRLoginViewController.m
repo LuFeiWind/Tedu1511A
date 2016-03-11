@@ -9,6 +9,7 @@
 #import "TRLoginViewController.h"
 #import <TPKeyboardAvoidingTableView.h>
 #import "TRLoginCell.h"
+#import "TRRegisterViewController.h"
 
 @interface TRLoginViewController ()
 @property (nonatomic) UIView *headerView;
@@ -28,7 +29,8 @@
 
 - (void)setupRigthItem{
     UIBarButtonItem *registerItem = [[UIBarButtonItem alloc] bk_initWithTitle:@" 注册 " style:UIBarButtonItemStyleDone handler:^(id sender) {
-        
+        TRRegisterViewController *vc = [[TRRegisterViewController alloc] initWithStyle:UITableViewStylePlain];
+        [self.navigationController pushViewController:vc animated:YES];
     }];
     self.navigationItem.rightBarButtonItem = registerItem;
 }
@@ -50,6 +52,7 @@
     self.tableView.tableHeaderView = self.headerView;
     [self.tableView registerClass:[TRLoginCell class] forCellReuseIdentifier:@"TRLoginCell"];
     self.tableView.tableFooterView = self.footerView;
+    self.tableView.allowsSelection = NO;
 }
 
 - (void)didReceiveMemoryWarning {

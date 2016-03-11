@@ -41,7 +41,7 @@
     if(_textField == nil) {
         _textField = [[UITextField alloc] init];
         _textField.font = [UIFont systemFontOfSize:18];
-        _textField.borderStyle = UITextBorderStyleRoundedRect;
+//        _textField.borderStyle = UITextBorderStyleRoundedRect;
         [self.contentView addSubview:_textField];
         [_textField mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerY.equalTo(0);

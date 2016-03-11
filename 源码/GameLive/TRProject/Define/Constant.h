@@ -12,6 +12,9 @@
 
 #define kEaseMobKey @"1660626091#trlive"
 
+#define kShareSDKAppKey @"104b1a1b239c0"
+#define kShareSDKAppSecret @"44d7b4b687218177ecf039149215bbf5"
+
 //屏幕宽度
 #define kScreenW [UIScreen mainScreen].bounds.size.width
 //屏幕高度
